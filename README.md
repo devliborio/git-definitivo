@@ -5,7 +5,7 @@
 ### **Principais Objetivos:** 📌
 
 >  Controle de Histórico
-
+>
 >  Trabalho em Equipe
 
 ---
@@ -19,7 +19,7 @@
 ### **Plataformas de Hospedagens:** 🌍
 
 >  GitHub
-
+>
 >  Bitbucket
 
 ---
@@ -103,7 +103,7 @@
     git add <nomedoarquivo>
 
 > Ambos servem para adicionar o arquivo no status de preparo (staged), esse comando é obrigatório para que você consiga realizar o commit.
-
+>
 > Apesar dos dois comandos acima terem o mesmo objetivo em comum, os dois também tem diferenças, sendo o 1 acompanhado pelo “ . “ que serve para adicionar TODOS os arquivos de uma vez só para o status (staged), já o 2 exemplo serve para adicionar no status staged somente o arquivo que foi inserido no campo.
 
 ---
@@ -131,15 +131,15 @@
     git status
 
 >  Para visualizar o status do arquivo, sobre isso temos alguns tópicos importantes, vamos lá:
-
+>
 > novoarquivo →  status untracked = estado de arquivo não rastreado pelo git (não versionado pelo git)
-
+>
 > nesse caso você usa o `git add .` ou o `git add nomedoarquvio` para envia-lo para a área de preparo, dessa forma o status dele vai para →  staged
-
+>
 > Após o arquivo ser direcionado ao status de staged (preparo) ao você aplicar o comando commit ele começa a ser versionado pelo git e passa a ter o estado →  unmodified
-
+>
 > Caso você edite este arquivo ele irá para o status →  modified
-
+>
 > Para aplicar as alterações e deixar ele novamente preparado para o commit, basta você enviar ele novamente para o status staged usando o `git add .` ou `git add nomedoarquivo`
 
 ---
@@ -165,7 +165,7 @@ Git hash order:
     git checkout -b <branch>
 
 > Esse comando cria uma nova branch e altera a referência HEAD para a mesma, tornando-a branch corrente.
-
+>
 > Porém há outras formas de criar uma branch, sem necessariamente alternar para a recém criada. Para criar uma nova branch a partir da branch corrente, você pode utilizar o comando:
 
     git branch <nome da nova branch>
@@ -179,7 +179,7 @@ Git hash order:
     git branch -a
 
 > Ele irá listar todas as nossas branch, tanto as locais que vão estar em branco quanto as de rastreamento que iram estar em vermelho.
-
+>
 > E sendo a branch verde com asterisco a nossa branch corrente (branch atual)
 
 ---
@@ -213,13 +213,13 @@ Git hash order:
 ### **Tags**  📍
 
 > Etiquetas ou Tags geralmente são usadas para marcar lançamentos estáveis ou a conquistas de marcos importantes
-
+>
 > Podem ajudar os usuário de repositório a navegar facilmente para as partes importantes do historio de códigos, como pontos de liberação.
 
 As Tags podem ser divididas em dois grupos as Tags Leves e as Tags Anotadas, irei explicar abaixo as diferenças:
 
 > **Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura git tag <'nome da tag'> e para Deletar uma tag temporária é só realizar o seguinte comando git tag -d <'nome da tag'> .
-
+>
 > **Tags Anotadas** →  São aquelas que devem ser publicadas para outros contribuidores, provavelmente novas versões, você pode definir essa tag usando a seguinte estrutura  `git tag -a <"titulo da tag"> -m <descrição da tag>`
 
 Até o momento só acrescentamos a Tag ao repositório local.
@@ -250,7 +250,7 @@ Pois bem, temos como configurar isso fazendo o seguinte:
 
 <br>
 
->  **Descartando mudanças Locais**
+  #### **Descartando mudanças Locais**
 
 > Fazendo com arquivo já criado
 
@@ -269,17 +269,17 @@ Pois bem, temos como configurar isso fazendo o seguinte:
     git status
 
 > tente utilizar git restore arquivonovo.txt este comando não terá efeito pois o novo arquivo não é rastreado pelo git (untracked)
-
+>
 > Para descartar neste caso utilize git clean arquivonovo.txt -f detalhe que o parâmetro -f  significa force a limpeza(exclusão) desse arquivo
-
+>
 > Para remover todos os arquivos que não são rastreados use git clean -f
-
+>
 > Agora caso você queira verificar primeiro todos os arquivos não rastreados antes de limpa-los execute: git clean -n e depois use git clean -f
 <br>
 
 ---
 
-> **Descartando mudanças do Stage**
+> #### **Descartando mudanças do Stage**
 
 
     echo "conteudo do arquivo" > arquivo.txt
@@ -296,17 +296,17 @@ Pois bem, temos como configurar isso fazendo o seguinte:
     
 ---
 
- ### **Observação:** 
+ #### **Observação:** 
  
  > Além de desfazer alterações, o comando restore também pode ser utilizado para restaurar versões anteriores em um arquivo.
-
-> Para isso, você pode utilizar o seguinte comando:
+ >
+ > Para isso, você pode utilizar o seguinte comando:
 
     git restore --source <hash do commit> <nome do arquivo> 
 
 ---
 
-> **Revert commit**
+> #### **Revert commit**
 
 > Vamos criar um arquivo novo:
 
