@@ -333,15 +333,3 @@ Agora vamos desfazer esse ultimo commit usando esse comando:
 - o git revert pode receber um id de commit ou qualquer refêrencia tag, branch ou HEAD, no caso acima foi revertido o commit corrente. Para reverter o penúltimo commit pode-se utilizar `git revert HEAD~1`
 
 ---
-
-## Autores
-
-- [@devliborio](https://www.github.com/devliborio)
- 
----
-## Linguagem utilizada
-
-
-<div style="display: inline-block"><br/>
-    <img alt="MARKDOWN" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"/>
-</div>
