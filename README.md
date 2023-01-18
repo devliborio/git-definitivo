@@ -1,6 +1,6 @@
 ## **GIT / GITHUB - DEFINITIVO** ✅
 
----
+
 
 ### **Principais Objetivos:** 📌
 
@@ -26,7 +26,7 @@
 
 ### **Comandos Git** 👾
 
----
+
 
     git init
 
@@ -146,7 +146,7 @@ Para aplicar as alterações e deixar ele novamente preparado para o commit, bas
 
 Git hash order:
 
->hash commit → hash tree → hash blobs → conteudo do arquivo.
+hash commit → hash tree → hash blobs → conteudo do arquivo.
 
 ---
 
@@ -250,7 +250,7 @@ Pois bem, temos como configurar isso fazendo o seguinte:
 
 <br>
 
-→  **Descartando Mudanças Locais**
+→  **Descartando mudanças Locais**
 
 Fazendo com arquivo já criado
 
