@@ -330,3 +330,5 @@ Agora vamos desfazer esse ultimo commit usando esse comando:
 
 - o parâmetro `--no-edit` fará com que o GIT não abra o editor de texto padrão.
 
+- o git revert pode receber um id de commit ou qualquer refêrencia tag, branch ou HEAD, no caso acima foi revertido o commit corrente. Para reverter o penúltimo commit pode-se utilizar `git revert HEAD~1`
+
