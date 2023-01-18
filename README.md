@@ -194,7 +194,7 @@ Git hash order:
 
 → São usados para criar comandos menores que correspondem a comandos maiores, como segue no exemplo abaixo:
 
-    git config --global alias.hist ‘log --pretty=format:” %h %ad | %s%d [%an]” --graph --date=short’
+    git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 
 → Nesse exemplo nosso criamos um alias para acessar o Git log, especificando um pouco o que vamos ter de saída do comando, vamos entender o que é cada estrutura deste comando:
 
@@ -293,5 +293,40 @@ Fazendo com arquivo novo
     git restore --staged →  Para remover o status de staged e retornar ao status corrente
 
     git status  → Note que ambos os arquivos que foram enviados para o status staged voltaram ao padrão.
+    
+---
+
+ ### **Observação:** 
+ 
+ Além de desfazer alterações, o comando restore também pode ser utilizado para restaurar versões anteriores em um arquivo.
+
+Para isso, você pode utilizar o seguinte comando:
+
+    git restore --source <hash do commit> <nome do arquivo> 
 
 ---
+
+→ **Revert commit**
+
+Vamos criar um arquivo novo:
+
+    touch arquivonovo.txt
+
+Agora vamos inserir um conteudo dentro deste arquivo:
+
+    echo "conteudo do arquivo novo" > arquivonovo.txt
+
+Vamos adicionar ele no status de "Staged" usando o comando abaixo:
+
+    git add .
+
+Agora é só fazer o commit:
+
+    git commit -m "novo arquivo arquivonovo.txt"
+
+Agora vamos desfazer esse ultimo commit usando esse comando:
+
+    git revert HEAD --no-edit
+
+- o parâmetro `--no-edit` fará com que o GIT não abra o editor de texto padrão.
+
