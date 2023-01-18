@@ -30,7 +30,7 @@
 
     git init
 
-→  Serve para criar um repositório LOCAL em algum diretório.
+>   Serve para criar um repositório LOCAL em algum diretório.
 
 ---
 
