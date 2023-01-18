@@ -215,23 +215,23 @@ Git hash order:
 > Etiquetas ou Tags geralmente são usadas para marcar lançamentos estáveis ou a conquistas de marcos importantes
 >
 > Podem ajudar os usuário de repositório a navegar facilmente para as partes importantes do historio de códigos, como pontos de liberação.
-
-As Tags podem ser divididas em dois grupos as Tags Leves e as Tags Anotadas, irei explicar abaixo as diferenças:
-
+>
+> As Tags podem ser divididas em dois grupos as Tags Leves e as Tags Anotadas, irei explicar abaixo as diferenças:
+>
 > **Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura git tag <'nome da tag'> e para Deletar uma tag temporária é só realizar o seguinte comando git tag -d <'nome da tag'> .
 >
 > **Tags Anotadas** →  São aquelas que devem ser publicadas para outros contribuidores, provavelmente novas versões, você pode definir essa tag usando a seguinte estrutura  `git tag -a <"titulo da tag"> -m <descrição da tag>`
-
-Até o momento só acrescentamos a Tag ao repositório local.
-
-Agora como empurramos uma Tag para um repositório remoto?
-
-Primeiramente precisamos entender o seguinte, o git push por si próprio não envia Tags para o repositório remoto, então para solucionar isso podemos usar a seguinte estrutura `git push --tags` que irá enviar por exemplo uma nova tag.
-
-Entretanto você precisara fazer dois pushs diferentes toda vez que tiver um commit para ser enviado e uma tag, porque não fazer tudo junto logo, não seria MUITO melhor ?
-
-Pois bem, temos como configurar isso fazendo o seguinte:
-
+> 
+> Até o momento só acrescentamos a Tag ao repositório local.
+>
+> Agora como empurramos uma Tag para um repositório remoto?
+>
+> Primeiramente precisamos entender o seguinte, o git push por si próprio não envia Tags para o repositório remoto, então para solucionar isso podemos usar a seguinte estrutura `git push --tags` que irá enviar por exemplo uma nova tag.
+> 
+> Entretanto você precisara fazer dois pushs diferentes toda vez que tiver um commit para ser enviado e uma tag, porque não fazer tudo junto logo, não seria MUITO melhor ?
+>
+> Pois bem, temos como configurar isso fazendo o seguinte:
+>
 > Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
 
     git config --local push.followTags true
