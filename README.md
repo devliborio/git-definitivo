@@ -94,7 +94,7 @@
 
     git <verb> --help ou git <verb> -help
 
-→  Serve para te retornar uma documentação do comando que você está com duvida, você coloca o nome do comando no lugar do <verb> e escolhe entre a versão 1 com o --help para te redirecionar para um site na web com a documentação ou a opção 2 -help que irá te retornar essa mesma documentação só que dessa vez no próprio  terminal.
+→  Serve para te retornar uma documentação do comando que você está com duvida, você coloca o nome do comando no lugar do `<verb>` e escolhe entre a versão 1 com o `--help` para te redirecionar para um site na web com a documentação ou a opção 2 -help que irá te retornar essa mesma documentação só que dessa vez no próprio  terminal.
 
 ---
 
@@ -134,19 +134,19 @@
 
 novoarquivo →  status untracked = estado de arquivo não rastreado pelo git (não versionado pelo git)
 
-nesse caso você usa o git add . ou o git add nomedoarquvio para envia-lo para a área de preparo, dessa forma o status dele vai para →  staged
+nesse caso você usa o `git add .` ou o `git add nomedoarquvio` para envia-lo para a área de preparo, dessa forma o status dele vai para →  staged
 
 Após o arquivo ser direcionado ao status de staged (preparo) ao você aplicar o comando commit ele começa a ser versionado pelo git e passa a ter o estado →  unmodified
 
 Caso você edite este arquivo ele irá para o status →  modified
 
-Para aplicar as alterações e deixar ele novamente preparado para o commit, basta você enviar ele novamente para o status staged usando o git add . ou git add nomedoarquivo
+Para aplicar as alterações e deixar ele novamente preparado para o commit, basta você enviar ele novamente para o status staged usando o `git add .` ou `git add nomedoarquivo`
 
 ---
 
 Git hash order:
 
-hash commit → hash tree → hash blobs → conteudo do arquivo.
+`hash commit → hash tree → hash blobs → conteudo do arquivo.`
 
 ---
 
@@ -198,15 +198,15 @@ hash commit → hash tree → hash blobs → conteudo do arquivo.
 
 → Nesse exemplo nosso criamos um alias para acessar o Git log, especificando um pouco o que vamos ter de saída do comando, vamos entender o que é cada estrutura deste comando:
 
-    %h  = Hash do commit abreviado
+`%h`  = Hash do commit abreviado
 
-    %ad = Data do commit
+`%ad` = Data do commit
 
-    %s = comentário
+`%s` = comentário
 
-    %d = Decorações do commit (Ex: head de branches, logs)
+`%d` = Decorações do commit (Ex: head de branches, logs)
 
-    %an = Autor do commit
+`%an` = Autor do commit
 
 ---
 
@@ -218,15 +218,15 @@ hash commit → hash tree → hash blobs → conteudo do arquivo.
 
 As Tags podem ser divididas em dois grupos as Tags Leves e as Tags Anotadas, irei explicar abaixo as diferenças:
 
-**Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura git tag <nome da tag> e para Deletar uma tag temporária é só realizar o seguinte comando git tag -d <nome da tag> .
+**Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura git tag <'nome da tag'> e para Deletar uma tag temporária é só realizar o seguinte comando git tag -d <'nome da tag'> .
 
-**Tags Anotadas** →  São aquelas que devem ser publicadas para outros contribuidores, provavelmente novas versões, você pode definir essa tag usando a seguinte estrutura git tag -a "<titulo da tag>" -m "<descrição da tag>"
+**Tags Anotadas** →  São aquelas que devem ser publicadas para outros contribuidores, provavelmente novas versões, você pode definir essa tag usando a seguinte estrutura  `git tag -a <"titulo da tag"> -m <descrição da tag>`
 
 Até o momento só acrescentamos a Tag ao repositório local.
 
 Agora como empurramos uma Tag para um repositório remoto?
 
-Primeiramente precisamos entender o seguinte, o git push por si próprio não envia Tags para o repositório remoto, então para solucionar isso podemos usar a seguinte estrutura git push --tags que irá enviar por exemplo uma nova tag.
+Primeiramente precisamos entender o seguinte, o git push por si próprio não envia Tags para o repositório remoto, então para solucionar isso podemos usar a seguinte estrutura `git push --tags` que irá enviar por exemplo uma nova tag.
 
 Entretanto você precisara fazer dois pushs diferentes toda vez que tiver um commit para ser enviado e uma tag, porque não fazer tudo junto logo, não seria MUITO melhor ?
 
