@@ -334,5 +334,14 @@ Agora vamos desfazer esse ultimo commit usando esse comando:
 
 ---
 
-→ **Reset commit**
+## Autores
+
+- [@devliborio](https://www.github.com/devliborio)
  
+---
+## Linguagem utilizada
+
+
+<div style="display: inline-block"><br/>
+    <img alt="MARKDOWN" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"/>
+</div>
