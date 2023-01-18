@@ -279,7 +279,7 @@ Pois bem, temos como configurar isso fazendo o seguinte:
 
 ---
 
-> #### **Descartando mudanças do Stage**
+ #### **Descartando mudanças do Stage**
 
 
     echo "conteudo do arquivo" > arquivo.txt
@@ -306,7 +306,7 @@ Pois bem, temos como configurar isso fazendo o seguinte:
 
 ---
 
-> #### **Revert commit**
+ #### **Revert commit**
 
 > Vamos criar um arquivo novo:
 
