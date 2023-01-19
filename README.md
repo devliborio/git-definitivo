@@ -6,7 +6,14 @@
 
 <br>
 
-### **Principais Objetivos do Git:** 📌
+## Features
+
+-   [Comandos Git](#comandos-git)
+-   [Aliases](#aliases)
+-   [Tags](#tags)
+-   [Descartando Alterações](#descartando-alterações)
+
+### **Principais Objetivos do Git:** 
 
 >  Controle de Histórico
 >
@@ -14,13 +21,13 @@
 
 ---
 
-### **Oque é o Git** 💭
+### **Oque é o Git** 
 
 >  É um sistema de controle de versões distribuído, usado para registrar o histórico de ediçoes de qualquer tipo de arquivo, usado principalmente em desenvolvimento de software. 
 
 ---
 
-### **Plataformas de Hospedagens:** 🌍
+### **Plataformas de Hospedagens:** 
 
 >  GitHub
 >
@@ -29,7 +36,7 @@
 
 ---
 
-### **Comandos Git** 👾
+### **Comandos Git** 
 
 
 
@@ -195,7 +202,7 @@ Git hash order:
 
 ---
 
-### **Aliases** 🐱‍👤
+### **Aliases** 
 
 > São usados para criar comandos menores que correspondem a comandos maiores, como segue no exemplo abaixo:
 
@@ -215,7 +222,7 @@ Git hash order:
 
 ---
 
-### **Tags**  📍
+### **Tags**  
 
 > Etiquetas ou Tags geralmente são usadas para marcar lançamentos estáveis ou a conquistas de marcos importantes
 >
@@ -251,7 +258,7 @@ Git hash order:
 
 ---    
 
-### **Descartando Alterações** ❌
+### **Descartando Alterações** 
 
 <br>
 
