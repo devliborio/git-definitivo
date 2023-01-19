@@ -4,6 +4,8 @@
  <p align="center">Projeto Desenvolvido para consulta de informações sobre o Git</p>
 </p>
 
+<br>
+
 ### **Principais Objetivos do Git:** 📌
 
 >  Controle de Histórico
