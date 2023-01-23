@@ -230,7 +230,7 @@ Git hash order:
 >
 > As Tags podem ser divididas em dois grupos as Tags Leves e as Tags Anotadas, irei explicar abaixo as diferenças:
 >
-> **Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura git tag <'nome da tag'> e para Deletar uma tag temporária é só realizar o seguinte comando git tag -d <'nome da tag'> .
+> **Tags Leves** → Mais apropriadas para o uso privado ou temporário, você pode definir uma tag em algum commit usando essa estrutura `git tag <'nome da tag'>` e para Deletar uma tag temporária é só realizar o seguinte comando `git tag -d <'nome da tag'>` .
 >
 > **Tags Anotadas** →  São aquelas que devem ser publicadas para outros contribuidores, provavelmente novas versões, você pode definir essa tag usando a seguinte estrutura  `git tag -a <"titulo da tag"> -m <descrição da tag>`
 > 
@@ -280,13 +280,13 @@ Git hash order:
 
     git status
 
-> tente utilizar git restore arquivonovo.txt este comando não terá efeito pois o novo arquivo não é rastreado pelo git (untracked)
+> tente utilizar `git restore arquivonovo.txt` este comando não terá efeito pois o novo arquivo não é rastreado pelo git (untracked)
 >
-> Para descartar neste caso utilize git clean arquivonovo.txt -f detalhe que o parâmetro -f  significa force a limpeza(exclusão) desse arquivo
+> Para descartar neste caso utilize `git clean arquivonovo.txt -f` detalhe que o parâmetro `-f`  significa force a limpeza(exclusão) desse arquivo
 >
-> Para remover todos os arquivos que não são rastreados use git clean -f
+> Para remover todos os arquivos que não são rastreados use `git clean -f`
 >
-> Agora caso você queira verificar primeiro todos os arquivos não rastreados antes de limpa-los execute: git clean -n e depois use git clean -f
+> Agora caso você queira verificar primeiro todos os arquivos não rastreados antes de limpa-los execute: `git clean -n` e depois use `git clean -f`
 <br>
 
 ---
@@ -345,3 +345,30 @@ Git hash order:
 > o git revert pode receber um id de commit ou qualquer refêrencia tag, branch ou HEAD, no caso acima foi revertido o commit corrente. Para reverter o penúltimo commit pode-se utilizar `git revert HEAD~1`
 
 ---
+### **Reset Commit**
+
+> O comando git reset é uma ferramenta mais versátil e um mais complexa que o revert, sendo classificada por três tipos: **soft** | **mixed** | **hard**.
+>
+> Se nenhum dos três parâmetros forem definidos o GIT assume como padrão o **mixed**
+
+<br>
+
+> Agora vamos entender melhor como funciona o **Reset Commit - SOFT**
+> 
+> Vamos adicionar um novo arquivo chamado `soft.txt`
+
+    touch soft.txt
+
+    git add soft.txt
+
+    git commit -m 'adding soft test'
+
+    git hist
+
+    git reset --soft head~
+    
+    git hist
+
+    git status
+
+> O parametro soft ele remove o commit e preserva a área de trabalho, deixando o arquivo no status de staged, se caso for da nossa preferencia limpar tbm a área de trabalho usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
