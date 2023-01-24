@@ -12,6 +12,9 @@
 -   [Aliases](#aliases)
 -   [Tags](#tags)
 -   [Descartando Alterações](#descartando-alterações)
+-   [Revert Commit](#revert-commit)
+-   [Reset Commit](#reset-commit)
+-   [Reflog](#reflog)
 
 ### **Principais Objetivos do Git:** 
 
@@ -318,7 +321,7 @@ Git hash order:
 
 ---
 
- ### **Revert commit**
+### **Revert Commit**
 
 > Vamos criar um arquivo novo:
 
