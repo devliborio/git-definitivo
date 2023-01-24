@@ -434,5 +434,35 @@ Git hash order:
     dir 
     
 > Pronto agora após usar o comando dir vemos que o nosso arquivo `hard.txt` já foi recuperado, e se usarmos o `cat hard.txt` veremos que o conteudo dele também foi.
+>
+> Percebam uma peculiaridade, apos executarmos o `git hist` vemos que o HEAD está apontando pro commit e não para master, e a master está apontando pra um commit anterior, algo que prioritariamente está irregular.
+>
+> Se usarmos o `git status` veremos algo chamado de **Detached HEAD** que ocorreu logo após utilizarmos o checkout em um commit especifico (Nesta situação baseado no reflog)
+>
+>
+> Vamos revisar o funcionamento da HEAD novamente:
+> - O HEAD deve apontar para a branch atual
+> - É atraves do HEAD que sabemos em qual branch estamos trabalhando
+> - O comportamento normal é o HEAD sempre estar apontando para alguma branch e a branch apontada para o último commit
+>
+> Depois de revisado esses conceitos basicos podemos entender que ao fazer o checkout diretamente em um commit, o HEAD irá apontar diretamente para um commit
+>
+> Essa situação caracteriza o processo dito acima denominado de **Detached HEAD**  
+>
+> A solução para incluir novamente o `hard.txt` dentro da master seria criar uma branch que aponte para o último desses commits e depois fazer um merge com a master. A sequencia de comandos é:
 
+    git branch branch-temp
+    
+> No comando acima a branch foi criada apartir do commit em que o `hard test` foi adicionado, ou seja essa branch está apontando para o commit que a gente precisa.
+
+    git checkout master
+    
+    git merge branch-temp
+    
+> O `git merge` traz as alterações de uma branch para outra.
+
+    git merge -d branch-temp
+    
+    git hist
+    
 ---
