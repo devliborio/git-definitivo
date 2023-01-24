@@ -371,4 +371,4 @@ Git hash order:
 
     git status
 
-> O parametro soft ele remove o commit e preserva a área de trabalho, deixando o arquivo no status de staged, se caso for da nossa preferencia limpar tbm a área de trabalho usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
+> O parametro soft ele remove o commit e preserva a área de trabalho, deixando o arquivo no status de staged, se caso for da nossa preferencia limpar também a área de trabalho usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
