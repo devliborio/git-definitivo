@@ -427,7 +427,7 @@ Git hash order:
 
     git reflog
    
-`Agora pegamos o hash do commit associado ao momento que adicionamos o hard test`
+> `Agora pegamos o hash do commit associado ao momento que adicionamos o hard test`
 
     git checkout <commit_hash>
     
@@ -457,9 +457,7 @@ Git hash order:
 
     git checkout master
     
-    git merge branch-temp
-    
-> O `git merge` traz as alterações de uma branch para outra.
+    git merge branch-temp -> O git merge traz as alterações de uma branch para outra.
 
     git merge -d branch-temp
     
