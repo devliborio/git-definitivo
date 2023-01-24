@@ -212,16 +212,16 @@ Git hash order:
     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 
 > Nesse exemplo nosso criamos um alias para acessar o Git log, especificando um pouco o que vamos ter de saída do comando, vamos entender o que é cada estrutura deste comando:
-
-`%h`  = Hash do commit abreviado
-
-`%ad` = Data do commit
-
-`%s` = comentário
-
-`%d` = Decorações do commit (Ex: head de branches, logs)
-
-`%an` = Autor do commit
+>
+> `%h`  = Hash do commit abreviado
+>
+> `%ad` = Data do commit
+>
+> `%s` = comentário
+>
+> `%d` = Decorações do commit (Ex: head de branches, logs)
+>
+> `%an` = Autor do commit
 
 ---
 
