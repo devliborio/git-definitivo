@@ -371,4 +371,26 @@ Git hash order:
 
     git status
 
-> O parametro soft ele remove o commit e preserva a área de trabalho, deixando o arquivo no status de staged, se caso for da nossa preferencia limpar também a área de trabalho usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
+> O parametro soft ele remove o commit e preserva tanto a área de trabalho como também a área de staging, se caso for da nossa preferencia limpar também a área de trabalho e a área de staging usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
+
+<br>
+
+> Agora vamos entender o **Reset Commit - MIXED**
+>
+> Vamos adicionar um arquivo chamado `mixed.txt`
+
+    touch mixed.txt
+    
+    git add mixed.txt
+    
+    git commit -m 'adding mixed test'
+    
+    git hist
+    
+    git reset head~
+    
+    git hist
+    
+    git status
+    
+> O parâmetro mixed ele remove o commit e preserva somente a área de trabalho, que ao contrario do soft que preserva a área de staging, o mixed remove ele deixando ele no status de untracked. Perceba também que não foi passado nenhum parâmetro no comando `git reset head~` porque por padrão se deixarmos vazio ele obrigatoriamente reconhece o reset como mixed.
