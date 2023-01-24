@@ -394,3 +394,23 @@ Git hash order:
     git status
     
 > O parâmetro mixed ele remove o commit e preserva somente a área de trabalho, que ao contrario do soft que preserva a área de staging, o mixed remove ele deixando ele no status de untracked. Perceba também que não foi passado nenhum parâmetro no comando `git reset head~` porque por padrão se deixarmos vazio ele obrigatoriamente reconhece o reset como mixed.
+
+<br>
+
+> Agora vamos entender o **Reset Commit - HARD**
+>
+> Vamos adicionar um arquivo chamado `hard.txt` e nele adicionar o conteudo "hard"
+
+    echo "hard" > hard.txt
+   
+    git add hard.txt
+   
+    git commit -m "adding hard test"
+   
+    git hist
+    
+    git reset --hard head~
+    
+    git hist
+        
+> O parâmetro hard ele diferente dos anteriores não preserva nem a área de staging e nem a área de trabalho, descartando totalmente todas as alterações realizadas, o uso convencional dele é geralmente feito para limpar todas as alterações feitas em ambas as áreas com base no ultimo commit.
