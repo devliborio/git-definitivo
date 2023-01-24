@@ -467,3 +467,31 @@ Git hash order:
     git hist
     
 ---
+
+### **Merge**
+
+> O merge trata-se de um procedimento de mesclagem que o GIT realiza uma combinação de mudanças de uma branch para outra branch.
+>
+> Iremos criar uma nova branch e fazer checkout nela pra entender melhor como podemos mescla-la com nossa branch principal
+
+    git checkout -b icone
+
+    touch icone.txt
+
+    git add icone.txt
+
+    git commit -m 'adding icon'
+
+    git hist
+>
+> Execute o `git hist` na branch icone
+>
+    git hist
+>
+> Executo o `git hist` na branch master
+>
+> Perceba que ao realizar o `git hist` em ambas as branchs você entende que após efetuarmos a mudança de branch da master para a icone, a master não evoluiu e todas as alterações só estão sendo efetuadas na branch icone, agora como queremos enviar todas as mudanças feitas na icone para a branch principal e dessa forma faremos:
+>
+    git merge icone
+>
+> Usando o `git merge icone` estamos enviando as alterações da branch icone para a branch master utilizando o método **Fast-forward** (Avanço rápido)
