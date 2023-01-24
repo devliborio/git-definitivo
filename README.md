@@ -308,7 +308,7 @@ Git hash order:
     
 ---
 
- #### **Observação:** 
+ ### **Observação:** 
  
  > Além de desfazer alterações, o comando restore também pode ser utilizado para restaurar versões anteriores em um arquivo.
  >
@@ -318,7 +318,7 @@ Git hash order:
 
 ---
 
- #### **Revert commit**
+ ### **Revert commit**
 
 > Vamos criar um arquivo novo:
 
@@ -414,3 +414,25 @@ Git hash order:
     git hist
         
 > O parâmetro hard ele diferente dos anteriores não preserva nem a área de staging e nem a área de trabalho, descartando totalmente todas as alterações realizadas, o uso convencional dele é geralmente feito para limpar todas as alterações feitas em ambas as áreas com base no ultimo commit.
+
+---
+
+### **Reflog**
+
+> Cenario: Você fez uma `git reset --hard head~` para algumas alterações indesejadas, mas depois percebeu que realmente precisava delas.
+> 
+> Solução: `git reflog` vem em sua ajuda! É um comando indispensavel para recuperar o histórico de projetos e recuperar quase tudo.
+> 
+> Agora que sabemos a solução para o nosso problema vamos recuperar o arquivo `hard.txt` com o conteudo "hard".
+
+    git reflog
+   
+`Agora pegamos o hash do commit associado ao momento que adicionamos o hard test`
+
+    git checkout <commit_hash>
+    
+    dir 
+    
+> Pronto agora após usar o comando dir vemos que o nosso arquivo `hard.txt` já foi recuperado, e se usarmos o `cat hard.txt` veremos que o conteudo dele também foi.
+
+---
