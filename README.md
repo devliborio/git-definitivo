@@ -601,3 +601,17 @@ Git hash order:
 > <p>
 > <img width="250px" src="https://w7.pngwing.com/pngs/756/246/png-transparent-data-structure-binary-tree-computer-science-binary-search-tree-acyclic-directed-graph-angle-white-symmetry.png" alt="DAG" />
 > </p>
+>
+> <br>
+>
+> #### **DAG x GIT**
+>
+> O GIT modela a relação dee commits com o grafo acíclico dirigido (DAG)
+>
+> Cada node (nó) representa um commit
+>
+> As setas apontam **para os pais** de um commit
+>
+> Na ilustração acima podemos notar que por exemplo o node / commit (1) pode ser definido como um commit de merge, porque ele tem dois pais sendo eles o 2 e o 3.
+
+---
