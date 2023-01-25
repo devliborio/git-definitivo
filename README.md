@@ -45,111 +45,109 @@
 ---
 
 ### **Comandos Git** 
-
-
-
-    git init
-
+>
+>     git init
+>
 >   Serve para criar um repositório LOCAL em algum diretório.
-
+>
 ---
-
-    git remote add origin <URL REMOTE REPOSITORY>
-
+>
+>     git remote add origin <URL REMOTE REPOSITORY>
+>
 >   Serve para conectar um repositório local com o repositório remoto
-
+>
 ---
-
-    git remote get-url origin
-
+>
+>     git remote get-url origin
+>
 >   Devolve a URL do repositório remoto no terminal
-
+>
 ---
-
-    git remote set-url origin <URL>
-
+>
+>     git remote set-url origin <URL>
+>
 >  Serve para alterar a origem remota usando URL HTTPS, como por exemplo:
 
-    git remote set-url origin https://devliborio:<app-password>@bitbucket.org/devliborio/git-test-repo.git
+>     git remote set-url origin https://devliborio:<app-password>@bitbucket.org/devliborio/git-test-repo.git
 
-    git remote set-url origin <https://<username>:<app-password>@bitbucket.org/<username>/git-test-repo.git> -> (ESTRUTURA)
-
+>     git remote set-url origin <https://<username>:<app-password>@bitbucket.org/<username>/git-test-repo.git> -> (ESTRUTURA)
+>
 ---
-
-    git config --global user.name “username“
-
+>
+>     git config --global user.name “username“
+>
 >  Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
-
+>
 ---
-
-    git config --global user.email “e-mail“
-
+>
+>     git config --global user.email “e-mail“
+>
 >  Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
-
+>
 ---
-
-    git config --local user.name “username“
-
+>
+>     git config --local user.name “username“
+>
 >  Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
-
+>
 ---
-
-    git config --local user.email “email“
-
+>
+>     git config --local user.email “email“
+>
 >  Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
-
+>
 ---
-
-    git config --system user.name "username"
-
+>
+>     git config --system user.name "username"
+>
 >  Para adicionar a configuração a todos os repositórios de todos os usuários do sistema operacional execute:
-
+>
 ---
-
-    git config --systema user.email "email"
-
+>
+>     git config --systema user.email "email"
+>
 >  Para adicionar a configuração a todos os repositórios de todos os usuários do sistema operacional execute:
-
+>
 ---
-
-    git <verb> --help ou git <verb> -help
-
+>
+>     git <verb> --help ou git <verb> -help
+>
 >  Serve para te retornar uma documentação do comando que você está com duvida, você coloca o nome do comando no lugar do `<verb>` e escolhe entre a versão 1 com o `--help` para te redirecionar para um site na web com a documentação ou a opção 2 -help que irá te retornar essa mesma documentação só que dessa vez no próprio  terminal.
 
 ---
-
-    git add . 
-
-    git add <nomedoarquivo>
-
+>
+>     git add . 
+>
+>     git add <nomedoarquivo>
+>
 > Ambos servem para adicionar o arquivo no status de preparo (staged), esse comando é obrigatório para que você consiga realizar o commit.
 >
 > Apesar dos dois comandos acima terem o mesmo objetivo em comum, os dois também tem diferenças, sendo o 1 acompanhado pelo “ . “ que serve para adicionar TODOS os arquivos de uma vez só para o status (staged), já o 2 exemplo serve para adicionar no status staged somente o arquivo que foi inserido no campo.
 
 ---
-
-    git commit -m "<sua mensagem>"
-
+>
+>     git commit -m "<sua mensagem>"
+>
 > Após o arquivo ser movido para o status de staged ele está pronto para ser commitado, contudo é só usar este comando acompanhado pela mensagem referente a alteração que foi feita.
-
+>
 ---
-
-    git push -u origin master
-
-    git push
-
+>
+>     git push -u origin master
+>
+>     git push
+>
 > Após ter aplicado o commit você deve querer enviar para a sua plataforma de hospedagem seja o Bitbucket ou o GitHub por exemplo, para isso basta criar uma branch de rastreamento usando o primeiro comando (OBS: só precisa usar essa primeira opção caso seja sua primeira vez fazendo o processo e ainda não tenha uma branch de rastreamento.), caso você já tenha feito isso, basta usar o git push que ele irá enviar seu commit para a plataforma de hospedagem sem problema.
-
+>
 ---
-
-    git show
-
+>
+>     git show
+>
 >  Para visualizar as alterações envolvidas em um determinado commit
 
 ---
-
-    git status
-
+>
+>     git status
+>
 >  Para visualizar o status do arquivo, sobre isso temos alguns tópicos importantes, vamos lá:
 >
 > novoarquivo →  status untracked = estado de arquivo não rastreado pelo git (não versionado pelo git)
@@ -164,48 +162,48 @@
 
 ---
 
-Git hash order:
-
-`hash commit → hash tree → hash blobs → conteudo do arquivo.`
-
+#### **Git hash order:**
+>
+> `hash commit → hash tree → hash blobs → conteudo do arquivo.`
+>
 ---
-
-    git cat-file -t <pedaço do hash>
-
+>
+>     git cat-file -t <pedaço do hash>
+>
 > Serve para mostrar o tipo da chave hash que estamos querendo saber.
-
+>
 ---
-
-    git cat-file -p <pedaço do hash>
-
+>
+>     git cat-file -p <pedaço do hash>
+>
 > Serve para mostrar o conteúdo da chave hash pode ser uma tree, blobs.
-
+>
 ---
-
-    git checkout -b <branch>
-
+>
+>     git checkout -b <branch>
+>
 > Esse comando cria uma nova branch e altera a referência HEAD para a mesma, tornando-a branch corrente.
 >
 > Porém há outras formas de criar uma branch, sem necessariamente alternar para a recém criada. Para criar uma nova branch a partir da branch corrente, você pode utilizar o comando:
-
-    git branch <nome da nova branch>
-
+>
+>     git branch <nome da nova branch>
+>
 > Para criar uma nova branch a partir de uma branch especifica utilize o comando
-
-    git branch -c <nome da branch específica> <nome da nova branch>
-
+>
+>     git branch -c <nome da branch específica> <nome da nova branch>
+>
 ---
 
-    git branch -a
-
+>     git branch -a
+>
 > Ele irá listar todas as nossas branch, tanto as locais que vão estar em branco quanto as de rastreamento que iram estar em vermelho.
 >
 > E sendo a branch verde com asterisco a nossa branch corrente (branch atual)
-
+>
 ---
-
-    git branch -m "change username"
-
+>
+>     git branch -m "change username"
+>
 > Serve para alterar o nome da branch
 
 ---
@@ -213,9 +211,9 @@ Git hash order:
 ### **Aliases** 
 
 > São usados para criar comandos menores que correspondem a comandos maiores, como segue no exemplo abaixo:
-
-    git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
-
+>
+>     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+>
 > Nesse exemplo nosso criamos um alias para acessar o Git log, especificando um pouco o que vamos ter de saída do comando, vamos entender o que é cada estrutura deste comando:
 >
 > `%h`  = Hash do commit abreviado
@@ -253,16 +251,16 @@ Git hash order:
 > Pois bem, temos como configurar isso fazendo o seguinte:
 >
 > Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
-
-    git config --local push.followTags true
-
+>
+>     git config --local push.followTags true
+>
 > Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
-
-    git config --global push.followTags true
-
+>
+>     git config --global push.followTags true
+>
 > Para adicionar a configuração a todos os repositórios de todos os usuários do sistema operacional execute:
-
-    git config --system push.followTags true
+>
+>     git config --system push.followTags true
 
 ---    
 
@@ -274,20 +272,20 @@ Git hash order:
 
 > Fazendo com arquivo já criado
 
-    echo "conteudo do arquivo" > arquivo.txt
-
-    git status
-
-    git restore arquivo.txt -> Ele restaura as alterações
-
-    git status
-
+>     echo "conteudo do arquivo" > arquivo.txt
+>
+>     git status
+>
+>     git restore arquivo.txt -> Ele restaura as alterações
+>
+>     git status
+>
 > Fazendo com arquivo novo
-
-    touch arquivonovo.txt
-
-    git status
-
+>
+>     touch arquivonovo.txt
+>
+>     git status
+>
 > tente utilizar `git restore arquivonovo.txt` este comando não terá efeito pois o novo arquivo não é rastreado pelo git (untracked)
 >
 > Para descartar neste caso utilize `git clean arquivonovo.txt -f` detalhe que o parâmetro `-f`  significa force a limpeza(exclusão) desse arquivo
@@ -300,54 +298,54 @@ Git hash order:
 ---
 
  #### **Descartando mudanças do Stage**
-
-
-    echo "conteudo do arquivo" > arquivo.txt
-
-    touch arquivonovo.txt
-
-    git status
-
-    git add .
-
-    git restore --staged →  Para remover o status de staged e retornar ao status corrente
-
-    git status  → Note que ambos os arquivos que foram enviados para o status staged voltaram ao padrão.
-    
+>
+>
+>     echo "conteudo do arquivo" > arquivo.txt
+>
+>     touch arquivonovo.txt
+>
+>     git status
+>
+>     git add .
+>
+>     git restore --staged →  Para remover o status de staged e retornar ao status corrente
+>
+>     git status  → Note que ambos os arquivos que foram enviados para o status staged voltaram ao padrão.
+>    
 ---
 
  ### **Observação:** 
  
- > Além de desfazer alterações, o comando restore também pode ser utilizado para restaurar versões anteriores em um arquivo.
- >
- > Para isso, você pode utilizar o seguinte comando:
-
-    git restore --source <hash do commit> <nome do arquivo> 
-
+> Além de desfazer alterações, o comando restore também pode ser utilizado para restaurar versões anteriores em um arquivo.
+>
+> Para isso, você pode utilizar o seguinte comando:
+>
+>     git restore --source <hash do commit> <nome do arquivo> 
+>
 ---
 
 ### **Revert Commit**
 
 > Vamos criar um arquivo novo:
-
-    touch arquivonovo.txt
-
+>
+>     touch arquivonovo.txt
+>
 > Agora vamos inserir um conteudo dentro deste arquivo:
-
-    echo "conteudo do arquivo novo" > arquivonovo.txt
-
+>
+>     echo "conteudo do arquivo novo" > arquivonovo.txt
+>
 > Vamos adicionar ele no status de "Staged" usando o comando abaixo:
-
-    git add .
-
+>
+>     git add .
+>
 > Agora é só fazer o commit:
-
-    git commit -m "novo arquivo arquivonovo.txt"
-
+>
+>     git commit -m "novo arquivo arquivonovo.txt"
+>
 > Agora vamos desfazer esse ultimo commit usando esse comando:
-
-    git revert HEAD --no-edit
-
+>
+>     git revert HEAD --no-edit
+>
 > o parâmetro `--no-edit` fará com que o GIT não abra o editor de texto padrão.
 >
 > o git revert pode receber um id de commit ou qualquer refêrencia tag, branch ou HEAD, no caso acima foi revertido o commit corrente. Para reverter o penúltimo commit pode-se utilizar `git revert HEAD~1`
@@ -364,21 +362,21 @@ Git hash order:
 > Agora vamos entender melhor como funciona o **Reset Commit - SOFT**
 > 
 > Vamos adicionar um novo arquivo chamado `soft.txt`
-
-    touch soft.txt
-
-    git add soft.txt
-
-    git commit -m 'adding soft test'
-
-    git hist
-
-    git reset --soft head~
-    
-    git hist
-
-    git status
-
+>
+>     touch soft.txt
+>
+>     git add soft.txt
+>
+>     git commit -m 'adding soft test'
+>
+>     git hist
+>
+>     git reset --soft head~
+>    
+>     git hist
+>
+>     git status
+>
 > O parametro soft ele remove o commit e preserva tanto a área de trabalho como também a área de staging, se caso for da nossa preferencia limpar também a área de trabalho e a área de staging usando o parâmetro soft, vamos ter que usar o git restore desse jeito: `git restore --staged soft.txt` e depois `git clean soft.txt -f`
 
 <br>
@@ -386,21 +384,21 @@ Git hash order:
 > Agora vamos entender o **Reset Commit - MIXED**
 >
 > Vamos adicionar um arquivo chamado `mixed.txt`
-
-    touch mixed.txt
-    
-    git add mixed.txt
-    
-    git commit -m 'adding mixed test'
-    
-    git hist
-    
-    git reset head~
-    
-    git hist
-    
-    git status
-    
+>
+>     touch mixed.txt
+>    
+>     git add mixed.txt
+>    
+>     git commit -m 'adding mixed test'
+>    
+>     git hist
+>    
+>     git reset head~
+>    
+>     git hist
+>    
+>     git status
+>    
 > O parâmetro mixed ele remove o commit e preserva somente a área de trabalho, que ao contrario do soft que preserva a área de staging, o mixed remove ele deixando ele no status de untracked. Perceba também que não foi passado nenhum parâmetro no comando `git reset head~` porque por padrão se deixarmos vazio ele obrigatoriamente reconhece o reset como mixed.
 
 <br>
@@ -408,19 +406,19 @@ Git hash order:
 > Agora vamos entender o **Reset Commit - HARD**
 >
 > Vamos adicionar um arquivo chamado `hard.txt` e nele adicionar o conteudo "hard"
-
-    echo "hard" > hard.txt
-   
-    git add hard.txt
-   
-    git commit -m "adding hard test"
-   
-    git hist
-    
-    git reset --hard head~
-    
-    git hist
-        
+>
+>     echo "hard" > hard.txt
+>   
+>     git add hard.txt
+>   
+>     git commit -m "adding hard test"
+>   
+>     git hist
+>    
+>     git reset --hard head~
+>    
+>     git hist
+>        
 > O parâmetro hard ele diferente dos anteriores não preserva nem a área de staging e nem a área de trabalho, descartando totalmente todas as alterações realizadas, o uso convencional dele é geralmente feito para limpar todas as alterações feitas em ambas as áreas com base no ultimo commit.
 
 ---
@@ -432,15 +430,15 @@ Git hash order:
 > Solução: `git reflog` vem em sua ajuda! É um comando indispensavel para recuperar o histórico de projetos e recuperar quase tudo.
 > 
 > Agora que sabemos a solução para o nosso problema vamos recuperar o arquivo `hard.txt` com o conteudo "hard".
-
-    git reflog
-   
+>
+>     git reflog
+>   
 > Agora pegamos o hash do commit associado ao momento que adicionamos o hard test
-
-    git checkout <commit_hash>
-    
-    dir 
-    
+>
+>     git checkout <commit_hash>
+>    
+>     dir 
+>    
 > Pronto agora após usar o comando dir vemos que o nosso arquivo `hard.txt` já foi recuperado, e se usarmos o `cat hard.txt` veremos que o conteudo dele também foi.
 >
 > Percebam uma peculiaridade, apos executarmos o `git hist` vemos que o HEAD está apontando pro commit e não para master, e a master está apontando pra um commit anterior, algo que prioritariamente está irregular.
@@ -458,19 +456,19 @@ Git hash order:
 > Essa situação caracteriza o processo dito acima denominado de **Detached HEAD**  
 >
 > A solução para incluir novamente o `hard.txt` dentro da master seria criar uma branch que aponte para o último desses commits e depois fazer um merge com a master. A sequencia de comandos é:
-
-    git branch branch-temp
-    
+>
+>     git branch branch-temp
+>    
 > No comando acima a branch foi criada apartir do commit em que o `hard test` foi adicionado, ou seja essa branch está apontando para o commit que a gente precisa.
-
-    git checkout master
-    
-    git merge branch-temp -> O git merge traz as alterações de uma branch para outra.
-
-    git merge -d branch-temp
-    
-    git hist
-    
+>
+>     git checkout master
+>    
+>     git merge branch-temp -> O git merge traz as alterações de uma branch para outra.
+>
+>     git merge -d branch-temp
+>    
+>     git hist
+>    
 ---
 
 ### **Merge**
@@ -481,13 +479,13 @@ Git hash order:
 > 
 > Iremos criar uma nova branch e fazer checkout nela pra entender melhor como podemos mescla-la com nossa branch principal
 
-    git checkout -b icone
-
-    touch icone.txt
-
-    git add icone.txt
-
-    git commit -m 'adding icon'
+>     git checkout -b icone
+>
+>     touch icone.txt
+>
+>     git add icone.txt
+>
+>     git commit -m 'adding icon'
 >
 > Execute o `git hist` na branch icone
 >
@@ -495,7 +493,7 @@ Git hash order:
 >
 > Perceba que ao realizar o `git hist` em ambas as branchs você entende que após efetuarmos a mudança de branch da master para a icone, a master não evoluiu e todas as alterações só estão sendo efetuadas na branch icone, agora como queremos enviar todas as mudanças feitas na icone para a branch principal e dessa forma faremos:
 >
-    git merge icone
+>    git merge icone
 >
 > Usando o `git merge icone` estamos enviando as alterações da branch icone para a branch master utilizando a estretagia **Fast-forward** (Avanço rápido)
 
@@ -505,11 +503,12 @@ Git hash order:
 >
 > Vale destacar que é possível visualizar o log de qualquer branch, mesmo que não seja a branch corrente. Para isso, basta executar:
 >
-      git log <nome da branch>
+>      git log <nome da branch>
 >
 >Lembrando que o comando git hist é um atalho criado a partir do git log personalizado. Por isso, o git hist também irá aceitar o nome da branch.
 >
-      git hist <nome da branch>
+>      git hist <nome da branch>
+
 --- 
 
 #### **Merge Three-Way**
@@ -517,37 +516,37 @@ Git hash order:
 > Pode também ser chamado de recursiva
 >
 > Para entender melhor ela vamos fazer o seguinte processo:
- 
-     git checkout -b menu
- 
-     touch menu.txt
- 
-     git add menu.txt
- 
-     git commit -m 'adding menu.txt'
- 
-     git checkout master
- 
+> 
+>     git checkout -b menu
+> 
+>     touch menu.txt
+> 
+>     git add menu.txt
+> 
+>     git commit -m 'adding menu.txt'
+> 
+>     git checkout master
+> 
 > Agora antes de realizar um merge da branch menu para a master vamos gerar um novo commit na branch master também
- 
-    echo 'icone' > icone.txt
- 
-    git add icone.txt
-    
-    git commit -m 'changes in icone.txt'
-
+> 
+>     echo 'icone' > icone.txt
+> 
+>     git add icone.txt
+>    
+>     git commit -m 'changes in icone.txt'
+>
 > Agora ao usar o `git hist` tanto na branch master quanto na branch menu percebemos exatamento o ponto onde elas divergem que é logo no ultimo commit feito.
 > 
 > Vamos fazer um merge para observar o que irá acontecer 
- 
-    git merge menu
- 
+> 
+>     git merge menu
+> 
 > Observe que o git irá abrir o editor de texto padrão para que você insira a mensagem de commit, essa mensagem pode ser chamada de `merge commit`, portanto para esse teste mantenha a mensagem padrão e saia do editor de texto.
 > 
 > O GIT nesse caso uso da estrategia recursiva (three-way) pois não teria como somente mudar o ponteiro da HEAD. Neste caso seria necessario mesclar o commit feito direto na master, porque lembre-se que foi feito um commit na branch menu e outro na branch master, então para não causar conflitos o merge pega o commit feito na branch menu e mescla com o commit feito na master, esse processo é chamado de estrategia recursiva.
- 
-    git hist
- 
+> 
+>     git hist
+> 
 > Após usar o `git hist` percebemos que nosso historico não está tão linear assim e sim meio bifurcado por conta do merge commit, entretando o processo foi efetuado com sucesso e sem conflitos, já sendo possivel que seja empurrada essas alterações para o seu repositorio remoto.
 
  ---
@@ -628,39 +627,39 @@ Git hash order:
 > O GIT marcarará o arquivo como conflitante e interomperá o processo da fusão (merge). É responsabilidade dos desenvolvedores resolver esse conflito.
 >
 > Para entendermos melhor vamos gerar um conflito:
-
-    echo -e 'consulta web service\nloga' > login.txt -> Esse -e serve para que possa ser interpretado esse /n para quebrar a linha.
-
-    git add login.txt
-
-    git commit -m 'login algorithm'
-
-    git checkout -b login-persist
-
+>
+>     echo -e 'consulta web service\nloga' > login.txt -> Esse -e serve para que possa ser interpretado esse /n para quebrar a linha.
+>
+>     git add login.txt
+>
+>     git commit -m 'login algorithm'
+>
+>     git checkout -b login-persist
+>
 > Altere o arquivo `login.txt` adicionando na terceira linha o conteúdo "salva na tabela" 
-
-    echo "salva na tabela" >> login.txt -> >> insere no final do arquivo
-
-    git add login.txt
-
-    git commit -m "including persist on login.txt"
-
-    git checkout master
-
+>
+>     echo "salva na tabela" >> login.txt -> >> insere no final do arquivo
+>
+>     git add login.txt
+>
+>     git commit -m "including persist on login.txt"
+>
+>     git checkout master
+>
 > Altere o arquivo login.txt adicionando na terceira linha o conteúdo "gambiarra"
-
-    echo "gambiarra" >> login.txt
-
-    git add login.txt
-
-    git commit -m "emergency adjustment"
-
-    git merge login-persist
-
+>
+>     echo "gambiarra" >> login.txt
+>
+>     git add login.txt
+>
+>     git commit -m "emergency adjustment"
+>
+>     git merge login-persist
+>
 > Perceba que ao tentar efetuar o merge da branch login-persist o git retorna um conflito que tem que ser resolvido.
-
-    git status
-
+>
+>     git status
+>
 > Após usar o `git status` você percebe que tem alterações que devem ser feitas no arquivo `login.txt` e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.
 >
 > Agora adicione novamente o arquivo `login.txt` a área de staging e depois efetue o commit
@@ -711,19 +710,19 @@ Git hash order:
 > Ou seja, nesta situação nossa área de trabalho se manteve intacta, novo GIT Objects foram baixados e a branch de rastreamento da master está apontando para o último commit feito no tópico anterior `login.txt`
 >
 > Para visualizar as alterações execute:
-
+>
 >     git checkout origin/master
 >
 > Executamos esse comando somente para visualizar as alterações na master remota
 >
 > Para trazer as alterações para a master local faça o procedimento seguinte:
-
+>
 >     git checkout master 
 >
 >     git merge --no-ff origin/master
 >
 >     git hist
-
+>
 > Apos executar o `git hist` vemos que foi efetuado o commit de merge e usando o `ls` ou `dir` veremos também que o arquivo `logo.txt` também ira constar na branch principal. 
 
 ---
