@@ -562,3 +562,41 @@ Git hash order:
 > Neste caso o GIT utilizará a técnica recursiva.
 
 ---
+
+### **Dag**
+
+> Para falar em Dag precisamos entender que a relação entre commits em um repositorio é baseado em grafos
+>
+> Grafos é uma área da matemática extremamente importante para a computação, em uma definição simples um grafo é uma estrutura usada para representar um modelo em que existem relações entre os objectos de uma certa colecção.
+> <p>
+> <img width="250px" src="https://static-02.hindawi.com/articles/jam/volume-2014/948521/figures/948521.fig.0012.jpg" alt="DAG" />
+> </p>
+>
+> A estrutura de uma grafo é relativamente simples onde esses circulos são os Node (Nós) e as linhas as Edge (Arestas) que ligam os Node, como é demonstrado na imagem acima.
+>
+> Um **grafo direcionado** é uma tipo de grafo em que os nós estão conectados em uma determinada direção
+>
+> #### **Grafos Aciclicos**
+>
+> São grafos onde não há ciclos ou não circulares, como mostrado no exemplo abaixo:
+> <p>
+> <img width="250px" src="https://i.stack.imgur.com/xeOJv.png" alt="DAG" />
+> </p>
+>
+> <br>
+>
+> #### **Grafos Ciclicos**
+>
+> São grafos onde há a existencia de cliclos circulares, como demonstrado abaixo:
+> <p>
+> <img width="250px" src="https://static-02.hindawi.com/articles/jam/volume-2014/948521/figures/948521.fig.0013.jpg" alt="DAG" />
+> </p>
+>
+> <br>
+>
+> #### **Grafo acíclico dirigido** (DAG)
+>
+> É um tipo de grafo que atende as seguintes características: **direcionado** e **acíclico**
+> <p>
+> <img width="250px" src="https://w7.pngwing.com/pngs/756/246/png-transparent-data-structure-binary-tree-computer-science-binary-search-tree-acyclic-directed-graph-angle-white-symmetry.png" alt="DAG" />
+> </p>
