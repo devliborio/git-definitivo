@@ -481,12 +481,8 @@ Git hash order:
     git add icone.txt
 
     git commit -m 'adding icon'
-
-    git hist
 >
 > Execute o `git hist` na branch icone
->
-    git hist
 >
 > Executo o `git hist` na branch master
 >
