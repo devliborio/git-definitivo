@@ -491,3 +491,16 @@ Git hash order:
     git merge icone
 >
 > Usando o `git merge icone` estamos enviando as alterações da branch icone para a branch master utilizando o método **Fast-forward** (Avanço rápido)
+
+---
+
+> #### **Observação sobre o** `git log`
+>
+> Vale destacar que é possível visualizar o log de qualquer branch, mesmo que não seja a branch corrente. Para isso, basta executar:
+>
+      git log <nome da branch>
+>
+>Lembrando que o comando git hist é um atalho criado a partir do git log personalizado. Por isso, o git hist também irá aceitar o nome da branch.
+>
+      git hist <nome da branch>
+--- 
