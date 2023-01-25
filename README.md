@@ -726,6 +726,23 @@
 
 ---
 #### **Pull**
-<br>
-
 >
+> O GIT pull baixa as alterações do repositório remoto e mescla com a sua área de trabalho
+>
+> Vamos alterar o conteudo do arquivo `logo.txt`
+>
+>     echo "logo" > logo.txt
+>
+>     git add logo.txt
+>
+>     git commit -m "changes in logo.txt"
+>
+>     git push
+>
+> Agora no repositório do outro colaborador vamos usar o `git pull` para receber as alterações que fizemos no conteudo do `logo.txt`.
+>
+>     git pull
+>
+>     git hist
+>
+> Com a execução do `git hist` podemos observar que o commit que acabamos de fazer no repositório principal já está incluso no repósitorio do outro colabroador ou seja o GIT baixou e fez o merge da branch de rastreamento `origin/master` pra branch local `Master`, e observe também que não teve nenhum commit de merge porque foi feito com a estratégia `Fast-forward`
