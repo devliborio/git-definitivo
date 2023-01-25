@@ -699,8 +699,7 @@
 <br>
 
 #### **Fetch**
-<br>
-
+>
 > Agora no repositorio principal vamos executar um comando:
 >
 >     git fetch
