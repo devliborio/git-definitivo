@@ -661,7 +661,7 @@ Git hash order:
 
     git status
 
-> Após usar o git status você percebe que tem alterações que devem ser feitas no arquivo login.txt e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.
+> Após usar o `git status` você percebe que tem alterações que devem ser feitas no arquivo `login.txt` e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.
 >
 > Agora adicione novamente o arquivo `login.txt` a área de staging e depois efetue o commit
 
@@ -675,3 +675,59 @@ Git hash order:
     git push
 
 ---
+
+### **Trabalho Colaborativo**
+<br>
+
+#### **Simulando um segundo colaborador**
+>
+> Agora vamos simular outro contribuidor atuando no projeto, fazendo um novo clone do repositorio.
+>
+    git branch -a
+>
+> É interessante notar que no novo repositorio a única branch local que existe é a da master.
+>
+> Agora vamos criar nosso primeiro commit nesse novo repositorio.
+>
+    touch logo.txt
+
+    git add logo.txt
+
+    git commit -m "adding logo.txt"
+
+    git push
+
+<br>
+
+#### **Fetch**
+<br>
+
+> Agora no repositorio principal vamos executar um comando:
+>
+    git fetch
+>
+> O fetch fará download do conteúdo remoto, mas não atualizará o estado de funcionamento do seu repositorio local, deixando intacto o trabalho atual.
+>
+> Ou seja, nesta situação nossa área de trabalho se manteve intacta, novo GIT Objects foram baixados e a branch de rastreamento da master está apontando para o último commit feito no tópico anterior `login.txt`
+>
+> Para visualizar as alterações execute:
+
+    git checkout origin/master
+>
+> Executamos esse comando somente para visualizar as alterações na master remota
+>
+> Para trazer as alterações para a master local faça o procedimento seguinte:
+
+    git checkout master
+
+    git merge --no-ff origin/master
+
+    git hist
+
+> Apos executar o `git hist` vemos que foi efetuado o commit de merge e usando o `ls` ou `dir` veremos também que o arquivo `logo.txt` também ira constar na branch principal. 
+
+---
+#### **Pull**
+<br>
+
+>
