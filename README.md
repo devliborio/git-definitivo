@@ -471,7 +471,9 @@ Git hash order:
 ### **Merge**
 
 > O merge trata-se de um procedimento de mesclagem que o GIT realiza uma combinação de mudanças de uma branch para outra branch.
->
+> 
+> Vamos ver agora um dos tipos de merge chamado de **Fast-forward** (Avanço rápido) 
+> 
 > Iremos criar uma nova branch e fazer checkout nela pra entender melhor como podemos mescla-la com nossa branch principal
 
     git checkout -b icone
@@ -494,7 +496,7 @@ Git hash order:
 
 ---
 
-> #### **Observação sobre o** `git log`
+ #### **Observação sobre o** `git log`
 >
 > Vale destacar que é possível visualizar o log de qualquer branch, mesmo que não seja a branch corrente. Para isso, basta executar:
 >
@@ -504,3 +506,41 @@ Git hash order:
 >
       git hist <nome da branch>
 --- 
+
+#### **Merge Three-Way**
+ 
+> Pode também ser chamado de recursiva
+>
+> Para entender melhor ela vamos fazer o seguinte processo:
+ 
+     git checkout -b menu
+ 
+     touch menu.txt
+ 
+     git add menu.txt
+ 
+     git commit -m 'adding menu.txt'
+ 
+     git checkout master
+ 
+> Agora antes de realizar um merge da branch menu para a master vamos gerar um novo commit na branch master também
+ 
+    echo 'icone' > icone.txt
+ 
+    git add icone.txt
+    
+    git commit -m 'changes in icone.txt'
+
+> Agora ao usar o `git hist` tanto na branch master quanto na branch menu percebemos exatamento o ponto onde elas divergem que é logo no ultimo commit feito.
+> 
+> Vamos fazer um merge para observar o que irá acontecer 
+ 
+    git merge menu
+ 
+> Observe que o git irá abrir o editor de texto padrão para que você insira a mensagem de commit, essa mensagem pode ser chamada de `merge commit`, portanto para esse teste mantenha a mensagem padrão e saia do editor de texto.
+> 
+> O GIT nesse caso uso da estrategia recursiva (three-way) pois não teria como somente mudar o ponteiro da HEAD. Neste caso seria necessario mesclar o commit feito direto na master, porque lembre-se que foi feito um commit na branch menu e outro na branch master, então para não causar conflitos o merge pega o commit feito na branch menu e mescla com o commit feito na master, esse processo é chamado de método recursivo.
+ 
+    git hist
+ 
+> Após usar o `git hist` percebemos que nosso historico não está tão linear assim e sim meio bifurcado por conta do merge commit, entretando o processo foi efetuado com sucesso e sem conflitos, já sendo possivel que seja empurrada essas alterações para o seu repositorio remoto.
