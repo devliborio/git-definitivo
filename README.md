@@ -435,7 +435,7 @@ Git hash order:
 
     git reflog
    
-> `Agora pegamos o hash do commit associado ao momento que adicionamos o hard test`
+> Agora pegamos o hash do commit associado ao momento que adicionamos o hard test
 
     git checkout <commit_hash>
     
@@ -637,7 +637,7 @@ Git hash order:
 
     git checkout -b login-persist
 
-> `Altere o arquivo login.txt adicionando na terceira linha o conteúdo "salva na tabela" `
+> Altere o arquivo `login.txt` adicionando na terceira linha o conteúdo "salva na tabela" 
 
     echo "salva na tabela" >> login.txt -> >> insere no final do arquivo
 
@@ -647,7 +647,7 @@ Git hash order:
 
     git checkout master
 
-> `Altere o arquivo login.txt adicionando na terceira linha o conteúdo "gambiarra"`
+> Altere o arquivo login.txt adicionando na terceira linha o conteúdo "gambiarra"
 
     echo "gambiarra" >> login.txt
 
@@ -657,20 +657,20 @@ Git hash order:
 
     git merge login-persist
 
-> `Perceba que ao tentar efetuar o merge da branch login-persist o git retorna um conflito que tem que ser resolvido.`
+> Perceba que ao tentar efetuar o merge da branch login-persist o git retorna um conflito que tem que ser resolvido.
 
     git status
 
 > `Após usar o git status você percebe que tem alterações que devem ser feitas no arquivo login.txt e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.`
 >
-> `Agora adicione novamente o arquivo login.txt a área de staging e depois efetue o commit`
+> Agora adicione novamente o arquivo `login.txt` a área de staging e depois efetue o commit
 
     git add login.txt
 
     git commit -m "resolving login conflict"
 
 >
-> `Depois desses passos feitos as alterações no arquivo e no conteudo dele já podem ser subidas para o repositorio remoto usando o git push`
+> Depois desses passos feitos as alterações no arquivo e no conteudo dele já podem ser subidas para o repositorio remoto usando o `git push`
 
     git push
 
