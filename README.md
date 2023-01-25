@@ -15,6 +15,9 @@
 -   [Revert Commit](#revert-commit)
 -   [Reset Commit](#reset-commit)
 -   [Reflog](#reflog)
+-   [Merge](#merge)
+-   [Merge Three-Way](#merge-three-way)
+-   [Merge No-fast-forward](#merge-no-fast-forward)
 
 ### **Principais Objetivos do Git:** 
 
