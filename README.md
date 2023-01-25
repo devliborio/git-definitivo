@@ -67,9 +67,9 @@
 >     git remote set-url origin <URL>
 >
 >  Serve para alterar a origem remota usando URL HTTPS, como por exemplo:
-
+>
 >     git remote set-url origin https://devliborio:<app-password>@bitbucket.org/devliborio/git-test-repo.git
-
+>
 >     git remote set-url origin <https://<username>:<app-password>@bitbucket.org/<username>/git-test-repo.git> -> (ESTRUTURA)
 >
 ---
@@ -271,7 +271,7 @@
   #### **Descartando mudanças Locais**
 
 > Fazendo com arquivo já criado
-
+>
 >     echo "conteudo do arquivo" > arquivo.txt
 >
 >     git status
@@ -478,7 +478,7 @@
 > Vamos ver agora um dos tipos de estrategias de merge chamado de **Fast-forward** (Avanço rápido) 
 > 
 > Iremos criar uma nova branch e fazer checkout nela pra entender melhor como podemos mescla-la com nossa branch principal
-
+>
 >     git checkout -b icone
 >
 >     touch icone.txt
