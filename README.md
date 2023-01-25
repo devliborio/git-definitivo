@@ -661,7 +661,7 @@ Git hash order:
 
     git status
 
-> `Após usar o git status você percebe que tem alterações que devem ser feitas no arquivo login.txt e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.`
+> Após usar o git status você percebe que tem alterações que devem ser feitas no arquivo login.txt e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.
 >
 > Agora adicione novamente o arquivo `login.txt` a área de staging e depois efetue o commit
 
