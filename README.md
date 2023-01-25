@@ -20,6 +20,9 @@
 -   [Merge No-fast-forward](#merge-no-fast-forward)
 -   [Dag](#dag)
 -   [Conflitos](#conflitos)
+-   [Trabalho Colaborativo](#trabalho-colaborativo)
+-   [Fetch](#fetch)
+-   [Pull](#pull)
 
 ### **Principais Objetivos do Git:** 
 
