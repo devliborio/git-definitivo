@@ -18,6 +18,7 @@
 -   [Merge](#merge)
 -   [Merge Three-Way](#merge-three-way)
 -   [Merge No-fast-forward](#merge-no-fast-forward)
+-   [Dag](#dag)
 
 ### **Principais Objetivos do Git:** 
 
