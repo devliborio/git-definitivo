@@ -749,3 +749,7 @@
 >     git hist
 >
 > Com a execução do `git hist` podemos observar que o commit que acabamos de fazer no repositório principal já está incluso no repósitorio do outro colabroador ou seja o GIT baixou e fez o merge da branch de rastreamento `origin/master` pra branch local `Master`, e observe também que não teve nenhum commit de merge porque foi feito com a estratégia `Fast-forward`
+
+---
+
+#### **Fetch x Pull**
