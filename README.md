@@ -472,7 +472,7 @@ Git hash order:
 
 > O merge trata-se de um procedimento de mesclagem que o GIT realiza uma combinação de mudanças de uma branch para outra branch.
 > 
-> Vamos ver agora um dos tipos de merge chamado de **Fast-forward** (Avanço rápido) 
+> Vamos ver agora um dos tipos de estrategias de merge chamado de **Fast-forward** (Avanço rápido) 
 > 
 > Iremos criar uma nova branch e fazer checkout nela pra entender melhor como podemos mescla-la com nossa branch principal
 
@@ -492,7 +492,7 @@ Git hash order:
 >
     git merge icone
 >
-> Usando o `git merge icone` estamos enviando as alterações da branch icone para a branch master utilizando o método **Fast-forward** (Avanço rápido)
+> Usando o `git merge icone` estamos enviando as alterações da branch icone para a branch master utilizando a estretagia **Fast-forward** (Avanço rápido)
 
 ---
 
@@ -539,8 +539,23 @@ Git hash order:
  
 > Observe que o git irá abrir o editor de texto padrão para que você insira a mensagem de commit, essa mensagem pode ser chamada de `merge commit`, portanto para esse teste mantenha a mensagem padrão e saia do editor de texto.
 > 
-> O GIT nesse caso uso da estrategia recursiva (three-way) pois não teria como somente mudar o ponteiro da HEAD. Neste caso seria necessario mesclar o commit feito direto na master, porque lembre-se que foi feito um commit na branch menu e outro na branch master, então para não causar conflitos o merge pega o commit feito na branch menu e mescla com o commit feito na master, esse processo é chamado de método recursivo.
+> O GIT nesse caso uso da estrategia recursiva (three-way) pois não teria como somente mudar o ponteiro da HEAD. Neste caso seria necessario mesclar o commit feito direto na master, porque lembre-se que foi feito um commit na branch menu e outro na branch master, então para não causar conflitos o merge pega o commit feito na branch menu e mescla com o commit feito na master, esse processo é chamado de estrategia recursiva.
  
     git hist
  
 > Após usar o `git hist` percebemos que nosso historico não está tão linear assim e sim meio bifurcado por conta do merge commit, entretando o processo foi efetuado com sucesso e sem conflitos, já sendo possivel que seja empurrada essas alterações para o seu repositorio remoto.
+
+ ---
+ #### **Merge No-fast-forward**
+ 
+> Vimos que na primeira estrategia que utilizamos o GIT assumiu que deveriamos usar a técnica fast-forward
+>
+> No entando, ocassionalmente, você deseja impedir que esse tipo de comportamento ocorra, por exemplo:
+>
+> Você está mesclando uma ramificação e deseja garantir que quando a branch for incorporada na master, isso esteja visível no seu histórico
+>
+> Para isso, basta utilizar a opção `--no-ff` no merge
+>
+> Neste caso o GIT utilizará a técnica recursiva.
+
+---
