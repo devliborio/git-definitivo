@@ -19,6 +19,7 @@
 -   [Merge Three-Way](#merge-three-way)
 -   [Merge No-fast-forward](#merge-no-fast-forward)
 -   [Dag](#dag)
+-   [Conflitos](#conflitos)
 
 ### **Principais Objetivos do Git:** 
 
@@ -613,5 +614,64 @@ Git hash order:
 > As setas apontam **para os pais** de um commit
 >
 > Na ilustração acima podemos notar que por exemplo o node / commit (1) pode ser definido como um commit de merge, porque ele tem dois pais sendo eles o 2 e o 3.
+
+---
+
+### **Conflitos**
+>
+> Os conflitos surgem em situações de mesclagem em que o GIT não pode determinar automaticamente o que está correto e é necessario decisões humanas
+>
+> É importante destacar que não é necessario dois desenvolvedores no projeto para que existam conflitos, duas branchs criadas pelo mesmo desenvolvedor também podem gerar conflitos.
+>
+> Os conflitos afetam apenas o desenvolvedor que conduz a mesclagem, o resto da equipe não tem conhecimento do conflito.
+>
+> O GIT marcarará o arquivo como conflitante e interomperá o processo da fusão (merge). É responsabilidade dos desenvolvedores resolver esse conflito.
+>
+> Para entendermos melhor vamos gerar um conflito:
+
+    echo -e 'consulta web service\nloga' > login.txt -> Esse -e serve para que possa ser interpretado esse /n para quebrar a linha.
+
+    git add login.txt
+
+    git commit -m 'login algorithm'
+
+    git checkout -b login-persist
+
+> `Altere o arquivo login.txt adicionando na terceira linha o conteúdo "salva na tabela" `
+
+    echo "salva na tabela" >> login.txt -> >> insere no final do arquivo
+
+    git add login.txt
+
+    git commit -m "including persist on login.txt"
+
+    git checkout master
+
+> `Altere o arquivo login.txt adicionando na terceira linha o conteúdo "gambiarra"`
+
+    echo "gambiarra" >> login.txt
+
+    git add login.txt
+
+    git commit -m "emergency adjustment"
+
+    git merge login-persist
+
+> `Perceba que ao tentar efetuar o merge da branch login-persist o git retorna um conflito que tem que ser resolvido.`
+
+    git status
+
+> `Após usar o git status você percebe que tem alterações que devem ser feitas no arquivo login.txt e para isso abra o arquivo no editor de código da sua preferencia, no meu caso abri o Visual Studio Code e ao abrir você ira perceber que ele mostrar as linahs que desenvolveram esse conflito e você tem algumas opções entre manter o commit de entrada, manter os dois commits ou manter o ultimo commit que foi feito, no meu caso escolhi manter os dois commits, após isso salve as alterações e o seu conflito já deve ter sido resolvido.`
+>
+> `Agora adicione novamente o arquivo login.txt a área de staging e depois efetue o commit`
+
+    git add login.txt
+
+    git commit -m "resolving login conflict"
+
+>
+> `Depois desses passos feitos as alterações no arquivo e no conteudo dele já podem ser subidas para o repositorio remoto usando o git push`
+
+    git push
 
 ---
