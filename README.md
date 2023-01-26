@@ -25,6 +25,8 @@
 -   [Pull](#pull)
 -   [Bloqueio de Push](#bloqueio-de-push)
 -   [Rebase](#rebase)
+-   [The Golden rule of rebase](#the-golden-rule-of-rebase)
+-   [Merge x Rebase](#merge-x-rebase)
 
 ### **Principais Objetivos do Git:** 
 
@@ -118,7 +120,6 @@
 >     git <verb> --help ou git <verb> -help
 >
 >  Serve para te retornar uma documentação do comando que você está com duvida, você coloca o nome do comando no lugar do `<verb>` e escolhe entre a versão 1 com o `--help` para te redirecionar para um site na web com a documentação ou a opção 2 -help que irá te retornar essa mesma documentação só que dessa vez no próprio  terminal.
-
 ---
 >
 >     git add . 
@@ -128,7 +129,6 @@
 > Ambos servem para adicionar o arquivo no status de preparo (staged), esse comando é obrigatório para que você consiga realizar o commit.
 >
 > Apesar dos dois comandos acima terem o mesmo objetivo em comum, os dois também tem diferenças, sendo o 1 acompanhado pelo “ . “ que serve para adicionar TODOS os arquivos de uma vez só para o status (staged), já o 2 exemplo serve para adicionar no status staged somente o arquivo que foi inserido no campo.
-
 ---
 >
 >     git commit -m "<sua mensagem>"
@@ -148,7 +148,6 @@
 >     git show
 >
 >  Para visualizar as alterações envolvidas em um determinado commit
-
 ---
 >
 >     git status
@@ -304,7 +303,6 @@
 
  #### **Descartando mudanças do Stage**
 >
->
 >     echo "conteudo do arquivo" > arquivo.txt
 >
 >     touch arquivonovo.txt
@@ -450,7 +448,6 @@
 >
 > Se usarmos o `git status` veremos algo chamado de **Detached HEAD** que ocorreu logo após utilizarmos o checkout em um commit especifico (Nesta situação baseado no reflog)
 >
->
 > Vamos revisar o funcionamento da HEAD novamente:
 > - O HEAD deve apontar para a branch atual
 > - É atraves do HEAD que sabemos em qual branch estamos trabalhando
@@ -505,7 +502,7 @@
 ---
 
  #### **Observação sobre o** `git log`
->
+
 > Vale destacar que é possível visualizar o log de qualquer branch, mesmo que não seja a branch corrente. Para isso, basta executar:
 >
 >      git log <nome da branch>
@@ -517,7 +514,7 @@
 --- 
 
 #### **Merge Three-Way**
- 
+>
 > Pode também ser chamado de recursiva
 >
 > Para entender melhor ela vamos fazer o seguinte processo:
@@ -622,7 +619,7 @@
 ---
 
 ### **Conflitos**
->
+
 > Os conflitos surgem em situações de mesclagem em que o GIT não pode determinar automaticamente o que está correto e é necessario decisões humanas
 >
 > É importante destacar que não é necessario dois desenvolvedores no projeto para que existam conflitos, duas branchs criadas pelo mesmo desenvolvedor também podem gerar conflitos.
@@ -684,7 +681,7 @@
 <br>
 
 #### **Simulando um segundo colaborador**
->
+
 > Agora vamos simular outro contribuidor atuando no projeto, fazendo um novo clone do repositorio.
 >
 >     git branch -a
@@ -704,7 +701,7 @@
 <br>
 
 #### **Fetch**
->
+
 > Agora no repositorio principal vamos executar um comando:
 >
 >     git fetch
@@ -731,7 +728,7 @@
 
 ---
 #### **Pull**
->
+
 > O GIT pull baixa as alterações do repositório remoto e mescla com a sua área de trabalho
 >
 > Vamos alterar o conteudo do arquivo `logo.txt`
@@ -755,7 +752,7 @@
 ---
 
 #### **Bloqueio de Push**
->
+
 > Para demonstrar essa situação vamos executar a seguinte situação:
 >
 > No repositorio local do outro contribuidor vamos criar um arquivo, commitar e enviar para o repositório remoto.
@@ -792,7 +789,7 @@
 <br>
 
 #### **Rebase**
->
+
 > Agora vamos entender como funciona o rebase, ele tem a mesma finalidade de um merge por exemplo, mas contudo de uma forma muito diferentes do merge.
 >
 > Vamos ver melhor o que foi dito na pratica:
@@ -825,7 +822,7 @@
 >
 > Agora ao executar o `git hist` vemos que o HEAD aponta pra master que aponta pro commit onde mudamos o conteudo do `menu.txt`
 >
-> Agora vamos retornar a branch notificacoes e fazer um rebase do master pra notificacoes
+> Agora vamos retornar a branch notificacoes e fazer um rebase na branch notificacoes
 >
 >         git checkout notificacoes
 >
@@ -841,7 +838,7 @@
 >
 > Um observação importante é que o commit foi recriado e inserido na ponta mantendo um histórico linear, perceba que essa era uma situação classica de estrtagia recursiva caso fosse efetuado um merge, que iria gerar um merge commit gerando um historico bifurcado em vez de linear, o problema de um historico cheio de merge recursivo é que pode ficar muito dificil de entender, diferente de um historico linear.
 >
-> Agora após fazer o rebase da master pra notificacoes vamos voltar a master e fazer um merge Fast-forward
+> Agora após fazer o rebase na branch notificacoes vamos voltar a master e fazer um merge Fast-forward
 >
 >          git checkout master
 >
@@ -849,4 +846,104 @@
 >
 >          git hist
 >
-> Pronto, finalizamos o processo, deixando ambas as branchs igualmente equiparadas. 
+> Pronto, finalizamos o processo, deixando ambas as branchs igualmente equiparadas.
+
+--- 
+
+ #### **The golden rule of rebase**
+
+> Depois de entender os conceitos envolvidos no Rebase é extremamente importante saber qundo não utilizar este comando
+>
+> A regra de ouru do Rebase é:
+>
+> **Não recrie commits que existam fora do seu repositório e nos quais as pessoas possam ter trabalhado** 
+
+---
+
+ #### **Merge x Rebase**
+
+> O merge é uma **operação não destrutiva**. As ramificações existentes não são alteradas de forma alguma. Isso evita todas as possiveis armadilhas do rebase.
+>
+> Por outro lado, em caso estrategias recursivas significa a existência de bifurcações, o que irá poluir o histórico do projeto.
+>
+> O rebase é uma **operação destrutiva**. Um ou mais commits serão eliminados e criados novamente.
+>
+> Por isso, para não gerar problemas maiores que um histórico poluído, é importante seguir a regra de ouro do rebase. Se você utilizar esse comando de forma consciente você terá um histórico mais linear e fácil de ser entendido.
+>
+> Ou seja se você preferir um histórico limpo e linear, sem confimações desnecessárias de mesclagem utilize `git rebase` ao invés de `git merge`.
+>
+> Por outro lado, se você deseja preservar o histórico completo do seu projeto e evitar o risco de reescrever commits publicos, você pode utilizar o `git merge`.
+
+---
+
+#### **Emendar Commit**
+> 
+> Pense que você fez um commit e depois percebeu que esqueceu de commitar alguma coisa, algum arquivo por exemplo, faria todo sentido que essa alteração que você esqueceu, estar no commit anterior em vez de um novo commit.
+>
+> Para entendermos melhor essa situação vamos fazer isso na pratica
+>
+> Vamos criar uma branch e fazer um commit nela:
+>
+>          git checkout -b brindes  
+>
+>          touch brindes.txt
+>
+>          git commit -m 'adding brindes.txt'
+>
+>          git hist
+>
+> Agora vamos adicionar um conteudo no arquivo brindes.txt
+>
+>           echo "meus brindes" > brindes.txt
+>
+>           git add brindes.txt
+>
+>           git commit --amend -m "adding brindes.txt with content"
+>
+>           git hist
+>
+> Percebem que quando fui fazer o commit, eu usei o parametro `--amend` que basicamente adicionou o conteudo "meus brindes" ao commit anterior que fizemos no primeiro exemplo, e note que esse primeiro commit não existe mais, porque com o uso do `--amend` ele foi recriado com as alterações do conteudo do arquivo `brindes.txt`.
+
+---
+
+#### **Squash Merge**
+>
+> O parâmetro `git merge --squash` ele junta dois commits por exemplo em um unico commit, vamos ver isso melhor na pratica.
+>
+> Vamos ir para o nosso repositório principal e ir para a branch master, apartir disso vamos criar uma nova branch, criar um novo arquivo e commitar:
+>
+>             git checkout master
+>
+>             git checkout -b esquecisenha
+>
+>             touch esquecisenha.txt
+>
+>             git add esquecisenha.txt
+>
+>             git commit -m "adding esquecisenha.txt"
+>
+> Agora vamos inserir um conteudo no arquivo esquecisenha.txt e commitar:
+> 
+>              echo 'esqueci a senha codigo' > esquecisenha.txt
+>
+>              git add esquecisenha.txt
+>
+>              git commit -m "finishing forgot my password"
+>
+>              git hist
+>
+> Após feito isso, vamos retornar a branch master e executar o `git merge --squash` na branch esquecisenha
+>
+>              git checkout master
+>
+>              git merge --squash esquecisenha
+>
+>              git commit -m "adding forgot my password feature"
+>              
+>              git hist
+>
+> Perceba que ao executar o `--squash` ele retorna um aviso que diz `"squash commit -- not updating HEAD"`, isso porque o GIT está esperando que a gente faça o commit da união dos dois commits do branch esquecisenha. Pra ficar mais claro, ele basicamente pegou as alterações desses dois commits da branch esquecisenha e colocou na área de preparo (staged), tanto que se você efetuar um `git status` você verá um arquivo na área de preparo que já contem tantos as alterações no conteudo, quanto a da criação do proprio arquivo.
+
+---
+
+#### **Rebase Iterativo**
