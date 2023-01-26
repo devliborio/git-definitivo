@@ -752,4 +752,36 @@
 
 ---
 
-#### **Fetch x Pull**
+#### **Bloqueio de Push**
+>
+> Para demonstrar essa situação vamos executar a seguinte situação:
+>
+> No repositorio local do outro contribuidor vamos criar um arquivo, commitar e enviar para o repositório remoto.
+> 
+>      touch dadospessoais.txt
+>
+>      git add dadospessoais.txt
+>
+>      git commmit -m 'adding dadospessoais.txt'
+>
+>      git push
+>
+> Agora vamos voltar ao nosso repositório principal e criar outro commit e tentar enviar para o repositorio remoto
+>
+>       touch dadospublicos.txt
+>
+>       git add dadospublicos.txt
+>
+>       git commit -m 'adding dadospublicos.txt'
+>
+>       git push
+>
+> Notem que o push foi bloqueado porque existe um commit do "outro contribuidor" que ainda não foi baixado no seu repositorio local. Nesta situação o GIT pede que você faça um pull antes, pois caso exista conflito de merge este será o momento de resolver
+>
+>       git pull
+>
+> Não houveram conflitos pois o merge foi realizado com arquivos diferentes, tendo isso em mente vamos empurrar para o repositório remoto
+>
+>       git push
+
+---
