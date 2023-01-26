@@ -27,6 +27,8 @@
 -   [Rebase](#rebase)
 -   [The Golden rule of rebase](#the-golden-rule-of-rebase)
 -   [Merge x Rebase](#merge-x-rebase)
+-   [Emendar Commit](#emendar-commit)
+-   [Squash Merge](#squash-merge)
 
 ### **Principais Objetivos do Git:** 
 
