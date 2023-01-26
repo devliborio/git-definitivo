@@ -23,6 +23,8 @@
 -   [Trabalho Colaborativo](#trabalho-colaborativo)
 -   [Fetch](#fetch)
 -   [Pull](#pull)
+-   [Bloqueio de Push](#bloqueio-de-push)
+-   [Rebase](#rebase)
 
 ### **Principais Objetivos do Git:** 
 
@@ -785,3 +787,66 @@
 >       git push
 
 ---
+
+### **Rescrevendo o histórico**
+<br>
+
+#### **Rebase**
+>
+> Agora vamos entender como funciona o rebase, ele tem a mesma finalidade de um merge por exemplo, mas contudo de uma forma muito diferentes do merge.
+>
+> Vamos ver melhor o que foi dito na pratica:
+>
+> Entre no repositorio principal e crie uma branch, crie um arquivo e commite ele
+>
+>       git checkout -b notificacoes
+>
+>       touch notificacoes.txt
+>
+>       git add notificacoes.txt
+>
+>       git commit -m "adding notificacoes.txt"
+>
+>       git hist
+>
+> Após executar o `git hist` vemos que a HEAD está apontando para nossa branch notificacoes que está apontando pro nosso commit que acabamos de fazer
+>
+> Agora vamos retornar a branch master e modificar o conteudo do arquivo `menu.txt` e depois commitar ele.
+>
+>        git checkout master
+>
+>        echo "menu" > menu.txt
+>
+>        git add menu.txt
+>
+>        git commit -m "changes in menu"
+>
+>        git hist
+>
+> Agora ao executar o `git hist` vemos que o HEAD aponta pra master que aponta pro commit onde mudamos o conteudo do `menu.txt`
+>
+> Agora vamos retornar a branch notificacoes e fazer um rebase do master pra notificacoes
+>
+>         git checkout notificacoes
+>
+>         git rebase master
+>
+>         git hist
+>
+> Vamos entender como funciona o comando rebase, basicamente ele irá pegar o commit que foi feito na branch notificacoes e vai recriar ele na ponta da branch master, se você parar pra pensar é como se ela fosse criada a partir da branch master no ultimo commit feito, que foi no conteudo do `menu.txt`
+>
+> Ou seja agora que executamos o `git rebase` a branch notificacoes tem como o ultimo commit o 'adding notificacoes' e graças ao rebase anteriormente a esse commit temos o commit de mudanças no conteudo no arquivo `menu.txt`.
+>
+> Note também que ao executar o `git hist` a hash do commit "adding notificacoes" foi alterada.
+>
+> Um observação importante é que o commit foi recriado e inserido na ponta mantendo um histórico linear, perceba que essa era uma situação classica de estrtagia recursiva caso fosse efetuado um merge, que iria gerar um merge commit gerando um historico bifurcado em vez de linear, o problema de um historico cheio de merge recursivo é que pode ficar muito dificil de entender, diferente de um historico linear.
+>
+> Agora após fazer o rebase da master pra notificacoes vamos voltar a master e fazer um merge Fast-forward
+>
+>          git checkout master
+>
+>          git merge notificacoes
+>
+>          git hist
+>
+> Pronto, finalizamos o processo, deixando ambas as branchs igualmente equiparadas. 
