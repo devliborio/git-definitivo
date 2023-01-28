@@ -949,3 +949,55 @@
 ---
 
 #### **Rebase Iterativo**
+>
+> O rebase iterativo faz com que ao invez de mover cegamente todos os commits para a nova base, oferece a oportunidade de alterar os commits individualmente no processo
+>
+> Para usar esse o `git rebase` utilize o parâmetro `--i`
+>
+> Perceba que ao executar o comando será aberto um editor padrão definido pelo GIT no qual você poderá inserir comandos para cada commit a ser rebaseado. Esses comandos determinam como os commits individuais serão transferidos para a nova base.
+>
+> Para entender melhor, vamos praticar, vamos criar uma branch nova e efetuar varios commits
+>
+>     git checkout -b promocoes
+>
+>     touch promocoes.txt
+>
+>     git add promocoes.txt
+>
+>     git commit -m "adding promocoes.txt"
+>
+> Agora vamos adicionar um conteudo no arquivo `promocoes.txt`
+>
+>     echo "codigo finalizado de promoções" > promocoes.txt
+>
+>     git add promocoes.txt
+>
+>     git commit -m "finishing promotions development"
+>
+> Agora vamos alterar o conteúdo do arquivo `promocoes.txt` 
+>
+>     echo "código finalizado de promoções sem bugs" > promocoes.txt
+>
+>     git add promocoes.txt
+>
+>     git commit -m "bugs xixes"
+>
+> Agora vamos colocar um novo conteúdo no arquivo `promocoes.txt`
+>
+>     echo "inclusão de gambiarra" > promocoes.txt
+>
+>     git add promocoes.txt
+>
+>     git commit -m "adding bad workaround"
+>
+> Vamos executar o `git hist` agora 
+>
+>     git hist
+>
+> Para executarmos o rebase iterativo nos 4 ultimos commits que fizemos teremos que escolher a referencia do ultimo commit anterior a eles, se no caso você não estiver na sua branch principal e quiser alterar o ultimo commit que foi feito nela, execute somente um `git rebase -i master` vamos fazer isso
+>
+>     git rebase -i master
+>
+> Após aberto o seu editor padrão vamos entender alguns conceitos sobre os comandos que vamos executar nos commits:
+>
+>
