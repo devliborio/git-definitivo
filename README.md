@@ -982,7 +982,7 @@
 >
 >     git commit -m "bugs xixes"
 >
-> Agora vamos colocar um novo conteúdo no arquivo `promocoes.txt`
+> Agora vamos colocar um novo conteúdo no arquivo `promocoes.txt`.
 >
 >     echo "inclusão de gambiarra" > promocoes.txt
 >
@@ -990,22 +990,47 @@
 >
 >     git commit -m "adding bad workaround"
 >
-> Vamos executar o `git hist` agora 
+> Vamos executar o `git hist` agora.
 >
 >     git hist
 >
-> Para executarmos o rebase iterativo nos 4 ultimos commits que fizemos teremos que escolher a referencia do ultimo commit anterior a eles, se no caso você não estiver na sua branch principal e quiser alterar o ultimo commit que foi feito nela, execute somente um `git rebase -i master` vamos fazer isso
+> Para executarmos o rebase iterativo nos 4 ultimos commits que fizemos teremos que escolher a referencia do ultimo commit anterior a eles, se no caso você não estiver na sua branch principal e quiser alterar o ultimo commit que foi feito nela, execute somente um `git rebase -i master` vamos fazer isso.
 >
 >     git rebase -i master
 >
 > Após aberto o seu editor padrão vamos entender alguns conceitos sobre os comandos que vamos executar nos commits:
 >
-> `p, pick <commit>` = usar commit
+> `p, pick <commit>` = usar commit.
 >  
-> `r, reword <commit>` = usar commit, mas edite a mensagem do commit
+> `r, reword <commit>` = usar commit, mas edite a mensagem do commit.
 >
-> `d, drop <commit>` = remover commit
+> `d, drop <commit>` = remover commit.
 >
-> `s, squash <commit>`= usar commit, mas mesclar em commit anterior 
+> `s, squash <commit>`= usar commit, mas mesclar em commit anterior. 
 >
 > Entendido os conceitos de alguns dos vários comandos do rebase iterativo, vamos aplica-los nos 4 commits que fizemos.
+>
+> No primeiro commit que fizemos: `adding promocoes.txt` vamos usar o comando `pick`.
+>
+> No segundo commit que fizemos: `finishing promotions development` vamos usar o comando `squash` para fundir ou mesclar ele no primeiro commit.
+>
+> No terceiro commit onde fizemos: `bugs xixes` vamos usar o comando `reword` para consertar o erro de ortografia "xixes" para "fixes".
+>
+> No quarto commit onde fizemos: `adding bad workaround` vamos usar o comando `drop` para deletar esse commit.
+>
+> Após escolher os comandos a serem utilizado em cada commit, iram abrir duas janelas de requisiçao do seu editor padrão do GIT.
+> - Uma para inserir a mensagem de commit da fusão do segundo commit com o primeiro.
+> - E a outra para editar a mensagem do terceiro commit onde em vez de `bug xixes` ira ser `bug fixes`. 
+>
+> Agora após efetuadas todas as alterações vamos voltar para branch master e fazer um merge da branch promocoes e realizar um push para o repositorio remoto. 
+>
+>     git checkout master
+>
+>     git merge promocoes
+>
+>     git push
+>
+> Pronto finalizamos os ensinamentos de rebase iterativo.
+---
+
+
