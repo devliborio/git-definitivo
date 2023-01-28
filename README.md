@@ -1000,4 +1000,12 @@
 >
 > Após aberto o seu editor padrão vamos entender alguns conceitos sobre os comandos que vamos executar nos commits:
 >
+> `p, pick <commit>` = usar commit
+>  
+> `r, reword <commit>` = usar commit, mas edite a mensagem do commit
 >
+> `d, drop <commit>` = remover commit
+>
+> `s, squash <commit>`= usar commit, mas mesclar em commit anterior 
+>
+> Entendido os conceitos de alguns dos vários comandos do rebase iterativo, vamos aplica-los nos 4 commits que fizemos.
