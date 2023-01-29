@@ -982,7 +982,7 @@
 >
 >     git commit -m "bugs xixes"
 >
-> Agora vamos colocar um novo conteúdo no arquivo `promocoes.txt`.
+> Agora vamos sobrescrever o conteúdo do arquivo `promocoes.txt`.
 >
 >     echo "inclusão de gambiarra" > promocoes.txt
 >
@@ -1031,6 +1031,54 @@
 >     git push
 >
 > Pronto finalizamos os ensinamentos de rebase iterativo.
+
 ---
 
+### **Outros conceitos e comandos**
+<br>
 
+#### **Stash**
+> 
+> O comando git stash salva as alterações sem commit (tanto as preparadas quanto as não preparadas) para uso posterior.
+>
+> Vamos entender melhor o seu uso na pratica:
+>
+> Vamos criar uma nova branch e mudar para ela
+>
+>      git checkout -b noticias
+>
+> Agora vamos criar um arquivo com um conteudo dentro dele.
+>
+>     echo "minha primeira noticia" > noticias.txt
+> 
+> Agora adicionar a área de preparo e commitar
+>
+>     git add noticias.txt
+>
+>     git commit -m "adding noticias.txt"
+>
+> Agora inserir outro conteudo em outra linha dentro do `noticias.txt`
+>
+>     echo "minha segunda noticia" >> noticias.txt
+>
+> Agora vamos tentar voltar para a branch master
+>
+>     git checkout master
+>
+> Perceba que retornou um erro, porque na branch master o arquivo `noticias.txt` não existe. Como houveram modificações, se o GIT deletar este arquivo suas modificações serão perdidas.
+>
+> Nesta situação o GIT está pedindo par que você commit suas mudanças ou que faça um `git stash` 
+>
+> O comando `git stash` salva suas modificações locais em uma pilha e limpa sua área de trabalho para o ultimo commit feito.
+>
+> Agora que já sabemos o que fazer, vamos executar o `git stash`
+>
+>     git stash
+>
+> Se não for passado nada no comando `stash` ele vai por padrão executar um `push`
+>
+> Agora vamos executar um `git stash list`, que vai mostrar o estado da pilha, e as entradas que foram feitas nela, vamos poder notar que a ultima modificação que foi feita está contida na pilha, que no caso é a inserção da segunda linha chamada `minha segunda noticia`.
+>
+> Agora que minha área de trabalho está limpa, como mostrado no `git status`, podemos voltar para branch master sem maiores problemas.
+>
+>     git checkout master
