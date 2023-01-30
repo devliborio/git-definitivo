@@ -1,6 +1,6 @@
 <p align="center">
  <img width="100px" src="https://res.cloudinary.com/teepublic/image/private/s--3G28Z3Jo--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_42332c,e_outline:35/co_42332c,e_outline:inner_fill:35/co_ffffff,e_outline:35/co_ffffff,e_outline:inner_fill:35/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1589988736/production/designs/10390341_0.jpg" align="center" alt="GitHub Readme Stats" />
- <h2 align="center">Git Definitive ✅</h2>
+ <h2 align="center">Git Definitivo ✅</h2>
  <p align="center">Projeto Desenvolvido para consulta de informações sobre o Git</p>
  </p>
 
