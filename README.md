@@ -1163,3 +1163,27 @@
 >     git status
 >
 > Note que após inserir o nome do arquivo que queremos que seja ignorado o `git status` não retorna mais o arquivo `arquivoignorado.txt`, pois configuramos ele para que o GIT não versione esse arquivo.
+>
+> Podemos tambem utilizar o padrão `glob` para marcar arquivos que serão ignorados, então ao inves de especificar um nome de arquivo com sua propriedades, podemos fazer da seguinte forma:
+>
+>     echo "arquivo*" > .gitignore
+>
+> E o que esse asterisco vai fazer?
+>
+> Bom ele vai ignorar todos os arquivos que começam com o nome "arquivo".
+>
+> Agora vamos ver na pratica como o `.gitignore` se comporta com os diretórios
+>
+> Vamos criar um diretorio e acrescentar um arquivo dentro dele
+>
+>     mkdir build
+>
+>     touch build/build.txt
+>
+> Se executarmos um `git status` veremos que nosso diretorio está aparecendo como `untracked`
+>
+> Agora vamos colocar esse diretório dentro do nosso `.gitignore`
+>
+>     echo "build/" >> .gitignore
+>
+> Se executarmos o `git status` veremos que assim como no exemplo anterior o diretório `build` foi ignorado pelo GIT.
