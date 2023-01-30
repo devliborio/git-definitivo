@@ -1291,3 +1291,15 @@
 
 ---
 
+<br>
+
+### **Referência**
+
+ - [Curso Git - Básico ao avancado (Udemy)](https://www.udemy.com/course/git-basico-ao-avancado-2021/)
+
+---
+<br>
+
+### **Feedback**
+
+Se você tiver algum feedback, por favor nos deixe saber por meio de liborio.ofc@gmail.com
