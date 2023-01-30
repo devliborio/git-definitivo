@@ -32,6 +32,7 @@
 -   [Rebase Iterativo](#rebase-iterativo)
 -   [Stash](#stash)
 -   [Blame](#blame)
+-   [Bisect](#bisect)
 
 ### **Principais Objetivos do Git:** 
 
@@ -1122,4 +1123,10 @@
 
 ---
 
-### **Bisect**
+### **Pull Request**
+>
+> O Pull request permite um processo de revisão de alterações antes de realizar um processo de mesclagem de uma branch para outra.
+>
+> Ele pode ser criado dentro da sua plataforma de repósitorio remoto como o `BitBucket` ou o proprio `GitHub` e após criado o processo de pull request a possibilidade de designar revisores para administrar esse pull request e aprovar, adicionar comentarios nas linhas de alterações do código, ou até desaprovar mostrando os pontos errados onde pode haver melhorias.
+>
+> Se reprovado o Pull Request o merge para a branch principal não ocorrera e terá que ser feito outro pull request para que possa ser aprovado e finalmente mesclada as alterações para a branch principal. 
