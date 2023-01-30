@@ -29,6 +29,9 @@
 -   [Merge x Rebase](#merge-x-rebase)
 -   [Emendar Commit](#emendar-commit)
 -   [Squash Merge](#squash-merge)
+-   [Rebase Iterativo](#rebase-iterativo)
+-   [Stash](#stash)
+-   [Blame](#blame)
 
 ### **Principais Objetivos do Git:** 
 
@@ -1079,6 +1082,44 @@
 >
 > Agora vamos executar um `git stash list`, que vai mostrar o estado da pilha, e as entradas que foram feitas nela, vamos poder notar que a ultima modificação que foi feita está contida na pilha, que no caso é a inserção da segunda linha chamada `minha segunda noticia`.
 >
-> Agora que minha área de trabalho está limpa, como mostrado no `git status`, podemos voltar para branch master sem maiores problemas.
+> Agora que a área de trabalho está limpa, como mostrado no `git status`, podemos voltar para branch master sem maiores problemas.
 >
 >     git checkout master
+>
+> Outra observação sobre o `git stash` é que por padrão arquivos com status untracked (que não são monitorados pelo GIT) não são salvos no `stash`, mas você pode usar `--include-untracked` para forçar que arquivos com esse status sejam salvos.
+>
+> Agora dando continuidade ao nosso exercicio pratico com o `git stash` vamos retornar para a branch de noticias.
+>
+>     git checkout noticias
+>
+> E agora vamos puxar novamente as alterações que salvamos com o git stash para nossa área de trabalho usando o seguinte comando
+>
+>     git stash pop
+>
+> E também podemos notar com o comando `git stash list` que a pilha está novamente vazia, já que retiramos o unico conteudo que estava salvo lá.
+
+---
+
+#### **Blame**
+>
+> Com o comando `Blame` podemos verificar qual commit e autor modificaram pela útima vez cada linha de um arquivo.
+>
+> Para tornar mais simples o entendimento vamos criar um arquivo, inserir um conteudo nele e commitar, logo após vamos usar o `git blame`
+>
+>     touch culpa.txt
+>
+>     echo "eu alterei" > culpa.txt
+>
+>     git add culpa.txt
+>
+>     git commit -m "adding culpa.txt" 
+> 
+> Após efetuada essa primeira etapa, vamos usar o `git blame` para vermos o que acontece
+>
+>     git blame culpa.txt
+>
+> Veremos que o GIT retorna o responsavel, a data, e o hash do ultimo commit abreviado.
+
+---
+
+### **Bisect**
