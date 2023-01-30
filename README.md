@@ -4,6 +4,8 @@
  <p align="center">Projeto Desenvolvido para consulta de informações sobre o Git</p>
 </p>
 
+[![GitHub watchers](https://img.shields.io/github/watchers/devliborio/git-definitivo.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/devliborio/git-definitivo/watchers/)
+
 <br>
 
 ## Features
