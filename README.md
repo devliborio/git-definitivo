@@ -1146,7 +1146,7 @@
 >
 > Vamos cirar um arquivo chamado `.gitignore`
 >
->     touch .gitigore
+>     touch .gitignore
 >
 > Agora vamos criar um arquivo qualquer que será ignorado pelo `.gitignore`
 >
