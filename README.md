@@ -1187,3 +1187,27 @@
 >     echo "build/" >> .gitignore
 >
 > Se executarmos o `git status` veremos que assim como no exemplo anterior o diretório `build` foi ignorado pelo GIT.
+>
+> O `.gitignore` não ignora arquivos e diretórios que já fazem parte do repositorio ou da área do staging
+>
+> Vamos limpar todas as configs do nosso arquivo `.gitignore`
+>
+>     echo "" > .gitignore
+>
+> Agora todos os arquivos que tinhamos definido para serem ignorados voltaram a se tornar disponiveis pro GIT, como podemos ver no `git status`
+>
+> Vamos colocar na área de preparo tanto o `arquivoignorado.txt` como o diretório `build/`
+>
+>     git add arquivoignorado.txt build/ 
+>
+> Agora ambos estão na área de preparo como mostra no `git status`, vamos tentar agora no arquivo `.gitignore` configurar para ignorar tanto o arquivo quanto o diretório.
+>
+>     echo -e "arquivo*\nbuild/" > .gitignore
+>
+> Agora executando um `git status` vemos que mesmo configurando o `.gitignore` para ignorar os dois arquivos, eles não são ignorados, **porque eles já estão na área de staging** e o `.gitignore` não ignora arquivos com esse status.
+>
+> Agora vamos remover ambos os arquivos da área de preparo
+>
+>     git restore --staged
+>
+> Executando um `git status` podemos ver que ambos os arquivos foram ignorados novamente, porque no momento que eles não fazem mais parte da área de preparo o GIT entende que pode ignora-los novamente.
