@@ -2,7 +2,15 @@
  <img width="100px" src="https://res.cloudinary.com/teepublic/image/private/s--3G28Z3Jo--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_42332c,e_outline:35/co_42332c,e_outline:inner_fill:35/co_ffffff,e_outline:35/co_ffffff,e_outline:inner_fill:35/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1589988736/production/designs/10390341_0.jpg" align="center" alt="GitHub Readme Stats" />
  <h2 align="center">Git Definitive ✅</h2>
  <p align="center">Projeto Desenvolvido para consulta de informações sobre o Git</p>
-</p>
+ </p>
+
+<div align="center">
+ 
+ [![GitHub watchers](https://img.shields.io/github/watchers/devliborio/git-definitivo.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/devliborio/git-definitivo/watchers/)
+[![GitHub forks](https://img.shields.io/github/forks/devliborio/git-definitivo.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/devliborio/git-definitivo/network/)
+[![GitHub stars](https://img.shields.io/github/stars/devliborio/git-definitivo.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/devliorio/git-definitivo/stargazers/)
+ 
+</div>
 
 <br>
 
