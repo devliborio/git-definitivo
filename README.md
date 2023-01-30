@@ -42,6 +42,7 @@
 -   [Blame](#blame)
 -   [Pull Request](#pull-request)
 -   [Igorando arquivos e diretórios](#ignorando-arquivos-e-diretórios)
+-   [Diff](#diff)
 
 ### **Principais Objetivos do Git:** 
 
@@ -1219,3 +1220,35 @@
 >     git restore --staged
 >
 > Executando um `git status` podemos ver que ambos os arquivos foram ignorados novamente, porque no momento que eles não fazem mais parte da área de preparo o GIT entende que pode ignora-los novamente.
+>
+> Mas e se tanto a pasta como o arquivo já estivessem entrado na área de reposotório di GIT?
+>
+> Vamos ver isso na pratica:
+>
+> Primeiro vamos limpar o nosso arquivo `.gitignore` novamente.
+>
+>     echo "" > .gitignore
+>
+> Vemos atraves do `git status` que eles voltarem a se tornar disponiveis novamente.
+>
+> Agora vamos adicionar tanto a pasta como o arquivo a área de preparo e logo após commitar
+>
+>     git add arquivoignorado.txt buid/
+>
+>     git commit -m "adding trash"
+>
+> Agora vamos tentar ignorar esses arquivos, configurando nosso `.gitignore` para isso
+>
+>     echo -e "arquivo*\nbuild/" > .gitignore
+>
+> Perceba que o `.gitignore` de nenhuma maneira vai conseguir ignorar arquivos que já estão sendo versionados pelo GIT
+>
+> E bem esses são os conceceitos mais importantes sobre o `.gitignore` 
+
+---
+
+#### **Diff**
+>
+> O comando `diff` serve para verificar diferenças entre commits, arquivos e árvores de diretórios.
+>
+> Se executarmos o `git diff` sem parâemtros ele irá comparar as versões da minha área de trabalho com a versãoda branch que a HEAD está apontando.
