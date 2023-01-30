@@ -1251,4 +1251,43 @@
 >
 > O comando `diff` serve para verificar diferenças entre commits, arquivos e árvores de diretórios.
 >
-> Se executarmos o `git diff` sem parâemtros ele irá comparar as versões da minha área de trabalho com a versãoda branch que a HEAD está apontando.
+> Se executarmos o `git diff` sem parâemtros ele irá comparar as versões da minha área de trabalho com a versão da branch que a HEAD está apontando.
+>
+> Agora vamos criar um arquivo e inserir um conteudo dentro dele, commitar e enviar para o repositorio remoto:
+>
+>     touch diferenca.txt
+>
+>     echo "conteudo diferente" > diferenca.txt
+>
+>     git add diferenca.txt
+>
+>     git commit -m "adding diferenca"
+>     
+>     git push
+>
+>  Agora vamos inserir uma segunda linha de conteudo no arquivo `diferenca.txt`  
+>
+>     echo "arquivo diferente 2" >> diferenca.txt
+>
+> E vamos executar o `git diff`
+>
+>     git diff
+>
+>  Perceba que ele retorna que o arquivo `diferenca.txt` teve a adição de uma linha
+>
+> Mas usar somente o `git diff` sem referenciar nada em uma situação que houverem diversas alterações pode deixar um pouco poluido o retorno do comando deixando que o GIT retorna diversas alterações em varios commits, para deixar isso mais direcionado basta usar o comando `git diff <nome do arquivo>` assim você faz com que o GIT faça uma busca mais especifica.
+>
+> Agora vamos levar essa segunda alteração de linha que fizemos no arquivo `diferenca.txt` para a área de preparo (staging) e tentar usar o `git diff`
+>
+>     git add diferenca.txt
+>
+>     git diff
+>
+> Perceba que o `git diff` não retorna nada, isso acontece porque o GIT está comparando minha HEAD com minha área de trabalho, só que as alterações agora estão na área de preparo, se quisermos comparar com a área de preparo, então deeveremos usar o `git diff` da seguinte forma:
+>
+>     git diff --staged
+>
+> Essas são as noções basicas de comparação do `git diff`.
+
+---
+
