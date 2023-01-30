@@ -33,6 +33,7 @@
 -   [Stash](#stash)
 -   [Blame](#blame)
 -   [Pull Request](#pull-request)
+-   [Igorando arquivos e diretórios](#ignorando-arquivos-e-diretórios)
 
 ### **Principais Objetivos do Git:** 
 
@@ -1133,4 +1134,32 @@
 
 ---
 
-####
+#### **Ignorando arquivos e diretórios**
+>
+> Podem existir, arquivos dentro do repositório que desejamos que o GIT ignore. Por exemplo, arquivos compilados, temporários e arquivos de configurações.
+>
+> Para isso, podemos criar um arquivo chamado `.gitignore` que geralmente vai estar na **raiz do repositório**.
+>
+> Dentro do `.gitignore` colocamos todos os arquivos e pastas para serem ignorados pelo GIT.
+>
+> Vamos ver isso na pratica:
+>
+> Vamos cirar um arquivo chamado `.gitignore`
+>
+>     touch .gitigore
+>
+> Agora vamos criar um arquivo qualquer que será ignorado pelo `.gitignore`
+>
+>     echo "arquivo que sera ignorado" > arquivoignorado.txt
+>
+>     git status
+>
+> Executando o `git status` vamos ver que os dois arquivos que eu criei estão no status `untracked`
+>
+> Agora dentro do arquivo `.gitignore` vamos inserir dentro dele o nome do arquivo que será ignorado e sua propriedade.
+>
+>     echo "arquivoignorado.txt" > .gitignore
+>
+>     git status
+>
+> Note que após inserir o nome do arquivo que queremos que seja ignorado o `git status` não retorna mais o arquivo `arquivoignorado.txt`, pois configuramos ele para que o GIT não versione esse arquivo.
