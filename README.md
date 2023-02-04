@@ -97,7 +97,7 @@
 >
 ---
 >
->     git config --global user.name “username“
+>     git config --global user.name "João Silva" 
 >
 >  Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
 >
