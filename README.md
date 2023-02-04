@@ -97,25 +97,25 @@
 >
 ---
 >
->     git config --global user.name "João Silva" 
+>     git config --global user.name "Jusername" 
 >
 >  Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
 >
 ---
 >
->     git config --global user.email “e-mail“
+>     git config --global user.email "e-mail"
 >
 >  Para adicionar a configuração a todos os repositórios do seu usuário corrente do sistema operacional execute:
 >
 ---
 >
->     git config --local user.name “username“
+>     git config --local user.name "username"
 >
 >  Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
 >
 ---
 >
->     git config --local user.email “email“
+>     git config --local user.email "email"
 >
 >  Para adicionar a configuração a um repositório local específico, acesse o repositório e execute:
 >
